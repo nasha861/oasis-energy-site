@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Now - Oasis Energy</title>
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+    <!-- Header -->
+ <header class="navbar">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="../Oasislogo.png" alt="Oasis Energy Logo">
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <!-- Hamburger toggle (mobile only) -->
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <!-- All links wrapped in nav-links -->
+    <div class="nav-links">
+      <a href="../Home/index.html">Home</a>
+
+      <!-- Residential Solar Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Services</button>
+        <div class="dropdown-content">
+          <a href="../Services/services.html">Services</a>
+          <a href="../Services/installation.html">Installation</a>
+          <a href="../Services/sales.html">Sales</a>
+          <a href="../Services/maintenance.html">Maintenance</a>
+        </div>
+      </div>
+
+      <!-- Energy Solutions Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)" >Energy Solutions</button>
+        <div class="dropdown-content">
+          <a href="../Energy-Solution/energySolution.html">Energy Solutions</a>
+          <a href="../Energy-Solution/betterSolarPanel.html">Better Solar Panel</a>
+          <a href="../Energy-Solution/solarBatteryStorage.html">Solar Battery Storage</a>
+        </div>
+      </div>
+
+      <!-- About Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">About Oasis</button>
+        <div class="dropdown-content">
+          <a href="../About/about.html">About</a>
+          <a href="../About/project.html">Project</a>
+          
+        </div>
+      </div>
+
+      <!-- Support Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Support</button>
+        <div class="dropdown-content">
+          <a href="../Support/contact.html">Contact Us</a>
+          <a href="../Support/blog.html">Blog</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Call-to-action button -->
+  <a href="../Auth/register.html" class="cta-btn">Get Started</a>
+</header>
+
+  <hr>
+
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Shop Oasis Energy Products</h1>
+    <p>Choose the perfect solar solution for your needs.</p>
+  </header>
+
+<nav class="StickyNavbar">
+  <ul class="nav-links">
+    
+    <li><a href="../Services/sales.html">Sales Page</a></li>
+     <li class="cart-icon" a href="../Auth/checkout.html">
+      🛒 <span id="cart-count"></span>
+    </li>
+  </ul>
+</nav>
+
+
+ <!-- Product Grid -->
+  <section class="products">
+    <div class="product-card">
+      <img src="../images/10kwh.webp" alt="10kWh Solar Battery">
+      <h2>Solar Battery 10kWh</h2>
+      <p>Compact battery for small households. Reliable backup power.</p>
+      <button class="cta-btn add-to-cart" data-product="Solar Battery 10kWh">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../images/20kwh.jpg" alt="20kWh Solar Battery">
+      <h2>Solar Battery 20kWh</h2>
+      <p>Extended backup for larger homes or businesses.</p>
+      <button class="cta-btn add-to-cart" data-product="Solar Battery 20kWh">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../images/400WSolarPanel.webp" alt="400W Solar Panel">
+      <h2>Solar Panel 400W</h2>
+      <p>High-efficiency panel with 25-year warranty.</p>
+      <button class="cta-btn add-to-cart" data-product="Solar Panel 400W">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../images/5kWSolarInverter.webp" alt="5kW Solar Inverter">
+      <h2>Solar Inverter 5kW</h2>
+      <p>Converts solar energy into usable electricity.</p>
+      <button class="cta-btn add-to-cart" data-product="Solar Inverter 5kW">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../images/HybridSolarSystem.jpg" alt="Hybrid Solar System">
+      <h2>Hybrid Solar System</h2>
+      <p>Complete package for total energy independence.</p>
+      <button class="cta-btn add-to-cart" data-product="Hybrid Solar System">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="../images/PortableSolarGenerator.webp" alt="Portable Solar Generator">
+      <h2>Portable Solar Generator</h2>
+      <p>Compact and mobile solution for off-grid adventures.</p>
+      <button class="cta-btn add-to-cart" data-product="Portable Solar Generator">Add to Cart</button>
+    </div>
+  </section>
+
+  <!-- Cart Section -->
+  <section id="cart" class="section alt">
+    <div class="content">
+      <div class="text">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <a href="checkout.html" class="cta-btn">Proceed to Checkout</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cartCount = document.getElementById("cart-count");
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cartCount.textContent = cart.length;
+
+  const buttons = document.querySelectorAll(".add-to-cart");
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      const product = button.getAttribute("data-product");
+      cart.push(product);
+
+      // save back to localStorage
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      
+
+      // Add product
+      cart.push(product);
+
+      
+
+      alert(product + " added to cart!");
+    });
+  });
+});
+</script>
+
+
+     <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-left">
+      <h3>OASIS ENERGY</h3>
+      <p>(+234 808 3887 719)</p>
+      <p>Plot 207 Garki, Abuja</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>Solar Solutions</h4>
+        <ul>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Home Solar Systems</a></li>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Home Battery Storage</a></li>
+          <li><a href="../Energy-Solution/solarBatteryStorage.html">How Solar Works</a></li>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Installation Process</a></li>
+          <li><a href="../Energy-Solution/solarBatteryStorage.html">Warranty</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Our Company</h4>
+        <ul>
+          <li><a href="../About/about.html">About</a></li>
+          <li><a href="../Support/contact.html">Contact</a></li>
+          <li><a href="../Support/blog.html">Blog</a></li>
+          <li><a href="../Services/services.html">Our Service Areas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>OASIS ENERGY</h4>
+        <ul>
+          <li><a href="#">Leadership</a></li>
+          <li><a href="#">Newsroom</a></li>
+          <li><a href="#">Licenses</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>2024 Oasis Energy Ltd. All rights reserved.</p>
+    <a href="../Auth/getAqoute.html" class="cta-btn">Start your Quote</a>
+  </div>
+</footer>
+
+  </body>
+</html>

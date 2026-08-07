@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quote</title>
+    <link rel="stylesheet" href="getAqoute.css">
+</head>
+<body>
+     <!-- Header -->
+ <header class="navbar">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="../Oasislogo.png" alt="Oasis Energy Logo">
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <!-- Hamburger toggle (mobile only) -->
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <!-- All links wrapped in nav-links -->
+    <div class="nav-links">
+      <a href="../Home/index.html">Home</a>
+
+      <!-- Residential Solar Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Services</button>
+        <div class="dropdown-content">
+          <a href="../Services/services.html">Services</a>
+          <a href="../Services/installation.html">Installation</a>
+          <a href="../Services/sales.html">Sales</a>
+          <a href="../Services/maintenance.html">Maintenance</a>
+        </div>
+      </div>
+
+      <!-- Energy Solutions Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)" >Energy Solutions</button>
+        <div class="dropdown-content">
+          <a href="../Energy-Solution/energySolution.html">Energy Solutions</a>
+          <a href="../Energy-Solution/betterSolarPanel.html">Better Solar Panel</a>
+          <a href="../Energy-Solution/solarBatteryStorage.html">Solar Battery Storage</a>
+        </div>
+      </div>
+
+      <!-- About Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">About Oasis</button>
+        <div class="dropdown-content">
+          <a href="../About/about.html">About</a>
+          <a href="../About/project.html">Project</a>
+          
+        </div>
+      </div>
+
+      <!-- Support Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Support</button>
+        <div class="dropdown-content">
+          <a href="../Support/contact.html">Contact Us</a>
+          <a href="../Support/blog.html">Blog</a>
+         
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Call-to-action button -->
+  <a href="../Auth/getAqoute.html" class="cta-btn">Get Started</a>
+</header>
+
+  <hr>
+
+    <section class="quote-form" id="quote">
+  <div class="form-container">
+    <h2>Solar Made Simple, Safe, and Built for Your Future</h2>
+    <p>We make solar simple. Our experts will guide you every step of the process. Submit your information today to get a free solar quote and get started.</p>
+
+    <form id="quoteForm" action="#" method="post">
+      <!-- Name Fields -->
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+        <small class="error-message">First name is required</small>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+        <small class="error-message">Last name is required</small>
+      </div>
+
+      <!-- Address -->
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" id="address" name="address" placeholder="Enter your address" required>
+        <small class="error-message">Address is required</small>
+      </div>
+
+       <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        <small class="error-message">Valid email is required</small>
+      </div>
+
+        <!-- Phone -->
+         <div class="form-group">
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+        <small class="error-message">Valid phone number is required</small>
+      </div>
+
+      <!-- Checkbox: How did you hear about us -->
+      <div class="form-group">
+        <label>Where did you hear about us?</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="source" value="social"> Social Media</label>
+          <label><input type="checkbox" name="source" value="friend"> Friend/Referral</label>
+          <label><input type="checkbox" name="source" value="advert"> Advertisement</label>
+          <label><input type="checkbox" name="source" value="other"> Other</label>
+        </div>
+      </div>
+
+      <!-- Checkbox: Homeowner -->
+      <div class="form-group">
+        <label><input type="checkbox" name="homeowner" value="yes"> I am a homeowner</label>
+      </div>
+
+      <!-- Submit -->
+       <a href="../Auth/getAqoute.html" class="cta-btn">Get a Free Quote</a>
+      
+    </form>
+  </div>
+
+  <!-- Confirmation Popup -->
+  <div id="confirmationPopup" class="popup">
+    <div class="popup-content">
+      <h3>Thank you!</h3>
+      <p>Your request has been submitted. We’ll contact you soon with your free solar quote.</p>
+      <button id="closePopup" class="btn">Close</button>
+    </div>
+  </div>
+</section>
+
+
+
+     <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-left">
+      <h3>OASIS ENERGY</h3>
+      <p>(+234 808 3887 719)</p>
+      <p>Plot 207 Garki, Abuja</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>Solar Solutions</h4>
+        <ul>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Home Solar Systems</a></li>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Home Battery Storage</a></li>
+          <li><a href="../Energy-Solution/solarBatteryStorage.html">How Solar Works</a></li>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Installation Process</a></li>
+          <li><a href="../Energy-Solution/solarBatteryStorage.html">Warranty</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Our Company</h4>
+        <ul>
+          <li><a href="../About/about.html">About</a></li>
+          <li><a href="../Support/contact.html">Contact</a></li>
+          <li><a href="../Support/blog.html">Blog</a></li>
+          <li><a href="../Services/services.html">Our Service Areas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>OASIS ENERGY</h4>
+        <ul>
+          <li><a href="#">Leadership</a></li>
+          <li><a href="#">Newsroom</a></li>
+          <li><a href="#">Licenses</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>2024 Oasis Energy Ltd. All rights reserved.</p>
+    <a href="../Auth/getAqoute.html" class="cta-btn">Start your Quote</a>
+  </div>
+</footer>
+
+<script>document.getElementById("quoteForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  let valid = true;
+
+  // Validate required fields
+  document.querySelectorAll("#quoteForm input[required]").forEach(input => {
+    const error = input.nextElementSibling;
+    if (!input.value.trim()) {
+      error.style.display = "block";
+      valid = false;
+    } else {
+      error.style.display = "none";
+    }
+  });
+
+  // Show confirmation popup if valid
+  if (valid) {
+    document.getElementById("confirmationPopup").style.display = "flex";
+  }
+});
+
+// Close popup
+document.getElementById("closePopup").addEventListener("click", function() {
+  document.getElementById("confirmationPopup").style.display = "none";
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #23395B;
+  background: #f9f9f9;
+}
+
+/* Header */
+/* ===== HEADER / NAVBAR ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #23395B; /* Oasis deep blue */
+  color: #fff;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.logo img {
+  height: 50px;
+}
+
+/* CTA button */
+.cta-btn {
+  background: #F18F01;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.cta-btn:hover {
+  background: #4CAF4F;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-links a,
+.dropbtn {
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+  display: block;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.nav-links a:hover,
+.dropbtn:hover {
+  background-color: #F5BF0F;
+  border-radius: 4px;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+}
+.dropbtn::after {
+  content: " ▼";
+  font-size: 12px;
+}
+
+/* Dropdown content (desktop hover) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 170px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: #004d40;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Hamburger menu */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+}
+
+/* ===== MOBILE STYLES ===== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #23395B;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 1rem;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+  }
+
+  .nav-links.active {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Dropdown animation for mobile */
+  .dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    position: static;
+    box-shadow: none;
+    background-color: #2c4a70;
+  }
+
+  .dropdown.active .dropdown-content {
+    max-height: 500px; /* enough space for items */
+  }
+
+  .dropdown-content a {
+    color: #fff;
+    padding: 10px;
+  }
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #78BCE0, #E8C168);
+  color: #23395B;
+  height: 600px;
+}
+.hero image
+{
+    align-content: center;
+}
+.hero h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Mission */
+.mission {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #fff;
+}
+.mission h2 {
+  margin-bottom: 1rem;
+  color: #4CAF4F;
+}
+
+/* Benefits */
+.benefits {
+  padding: 3rem 2rem;
+  background: #E2E3E4;
+}
+.benefits h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.benefit {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #fff;
+}
+.testimonials blockquote {
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.testimonials cite {
+  display: block;
+  margin-top: 0.5rem;
+  color: #4CAF4F;
+}
+
+/* Footer */
+.footer {
+  background: #23395B;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+.footer .social a {
+  margin: 0 0.5rem;
+  color: #F9D649;
+  text-decoration: none;
+}
