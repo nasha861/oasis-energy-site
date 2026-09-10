@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Services</title>
+    <link rel="stylesheet" href="services.css">
+</head>
+<body>
+     <!-- Header -->
+ <header class="navbar">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="../Oasislogo.png" alt="Oasis Energy Logo">
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <!-- Hamburger toggle (mobile only) -->
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <!-- All links wrapped in nav-links -->
+    <div class="nav-links">
+      <a href="../Home/index.html">Home</a>
+
+      <!-- Residential Solar Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Services</button>
+        <div class="dropdown-content">
+          <a href="../Services/services.html">Services</a>
+          <a href="../Services/installation.html">Installation</a>
+          <a href="../Services/sales.html">Sales</a>
+          <a href="../Services/maintenance.html">Maintenance</a>
+        </div>
+      </div>
+
+      <!-- Energy Solutions Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Energy Solutions</button>
+        <div class="dropdown-content">
+          <a href="../Energy-Solution/energySolution.html">Energy Solution</a>
+          <a href="../Energy-Solution/betterSolarPanel.html">Better Solar Panel</a>
+          <a href="../Energy-Solution/solarBatteryStorage.html">Solar Battery Storage</a>
+        </div>
+      </div>
+
+      <!-- About Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">About Oasis</button>
+        <div class="dropdown-content">
+          <a href="../About/about.html">About</a>
+          <a href="../About/project.html">Project</a>
+          
+        </div>
+      </div>
+
+      <!-- Support Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Support</button>
+        <div class="dropdown-content">
+          <a href="../Support/contact.html">Contact Us</a>
+          <a href="../Support/blog.html">Blog</a>
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Call-to-action button -->
+  <a href="../Auth/register.html" class="cta-btn">Get Started</a>
+</header>
+
+  <hr>
+    <!-- Hero Section -->
+    <section class="hero">
+    <div class="hero-content">
+        <h1>Power Your Life with <span>Solar Energy</span></h1>
+         <p>Save Money. Gain Energy Independence. Go Green.</p>
+
+         <ul class="hero-points">
+      <li>✔ Top-Quality Solar Solutions</li>
+      <li>✔ Expert Installation & Support</li>
+      <li>✔ Affordable Financing Options</li>
+        </ul>
+
+        <a href="../Auth/getAqoute.html" class="cta-btn hero-btn">Get Started</a>
+    </div>
+    </section>
+
+    <section class="smart-homeowner">
+    <div class="smart-container">
+        <h2>Smart Homeowner Choose Oasis Energy</h2>
+        <p class="intro">
+        Oasis Energy makes the switch to clean power effortless. We believe your home is your sanctuary; 
+        that’s why we craft bespoke solar solutions tailored to your unique lifestyle, budget and vision for the future.
+        </p>
+
+        <h3>The Oasis Advantage:</h3>
+        <ul class="advantage-list">
+        <li><strong>Bespoke Brilliance:</strong> Solar designs as unique as your home.</li>
+        <li><strong>Peak Performance:</strong> Premium tech built to outshine the rest.</li>
+        <li><strong>Total Independence:</strong> Own your energy and power your freedom.</li>
+        <li><strong>Zero-fuss Setup:</strong> We handle the heavy lifting while you enjoy the glow.</li>
+        </ul>
+    </div>
+    </section>
+
+<section class="installer-image">
+  <img src="../images/solar-panels-and-installers-on-roof-homes.jpg" alt="Solar Panels">
+</section>
+
+
+
+<section class="services">
+        <h1>Our Solar Services</h1>
+        <p class="subtitle">Powering your future with clean energy solution</p>
+        
+
+<div class="service-container">
+                <!--Installation-->
+                <div class="service-card">
+                    <h2>Solar Installation</h2>
+                    <p>We design and install high-efficiency solar systems tailored to your home or business.</p>
+                    <ul>
+                    <li>System design</li>
+                    <li>Component Selections</li>
+                    <li>Performance Optimization</li>
+                </ul>
+                
+                <a href="../Auth/getAqoute.html" class="cta-btn service-btn">Get Quote</a>
+
+                </div>
+
+            <!-- Maintenance -->
+            <div class="service-card">
+                <h2>Maintenance</h2>
+                <p>Keep your solar system running at peak performance with regular maintenance.</p>
+                <ul>
+                    <li>System inspections</li>
+                    <li>Cleaning & repairs</li>
+                    <li>Performance monitoring</li>
+                </ul>
+                <a href="../Services/maintenance.html" class="cta-btn service-btn">Schedule Service</a>
+            </div>
+
+            <!-- Sales -->
+            <div class="service-card">
+                <h2>Solar Sales</h2>
+                <p>Purchase high-quality solar panels, inverters, and batteries at competitive prices.</p>
+                <ul>
+                    <li>Top-tier brands</li>
+                    <li>Affordable pricing</li>
+                    <li>Expert consultation</li>
+                </ul>
+                <a href="../Services/sales.html" class="cta-btn service-btn">View Products</a>
+            </div>
+        </div>
+    </section>
+
+  
+     <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-left">
+      <h3>OASIS ENERGY</h3>
+      <p>(+234 808 3887 719)</p>
+      <p>Plot 207 Garki, Abuja</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>Solar Solutions</h4>
+        <ul>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Home Solar Systems</a></li>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Home Battery Storage</a></li>
+          <li><a href="../Energy-Solution/solarBatteryStorage.html">How Solar Works</a></li>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Installation Process</a></li>
+          <li><a href="../Energy-Solution/solarBatteryStorage.html">Warranty</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Our Company</h4>
+        <ul>
+          <li><a href="../About/about.html">About</a></li>
+          <li><a href="../Support/contact.html">Contact</a></li>
+          <li><a href="../Support/blog.html">Blog</a></li>
+          <li><a href="../Services/services.html">Our Service Areas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>OASIS ENERGY</h4>
+        <ul>
+          <li><a href="#">Leadership</a></li>
+          <li><a href="#">Newsroom</a></li>
+          <li><a href="#">Licenses</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>2024 Oasis Energy Ltd. All rights reserved.</p>
+    <a href="../Auth/getAqoute.html" class="cta-btn">Start your Quote</a>
+  </div>
+</footer>
+</body>
+</html>

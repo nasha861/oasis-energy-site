@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maintenance - Oasis Energy</title>
+  <link rel="stylesheet" href="maintenance.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+ <!-- Header -->
+ <header class="navbar">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="../Oasislogo.png" alt="Oasis Energy Logo">
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <!-- Hamburger toggle (mobile only) -->
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <!-- All links wrapped in nav-links -->
+    <div class="nav-links">
+      <a href="../Home/index.html">Home</a>
+
+      <!-- Residential Solar Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Services</button>
+        <div class="dropdown-content">
+          <a href="../Services/services.html">Services</a>
+          <a href="../Services/installation.html">Installation</a>
+          <a href="../Services/sales.html">Sales</a>
+          <a href="../Services/maintenance.html">Maintenance</a>
+        </div>
+      </div>
+
+      <!-- Energy Solutions Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)" >Energy Solutions</button>
+        <div class="dropdown-content">
+          <a href="../Energy-Solution/energySolution.html">Energy Solutions</a>
+          <a href="../Energy-Solution/betterSolarPanel.html">Better Solar Panel</a>
+          <a href="../Energy-Solution/solarBatteryStorage.html">Solar Battery Storage</a>
+        </div>
+      </div>
+
+      <!-- About Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">About Oasis</button>
+        <div class="dropdown-content">
+          <a href="../About/about.html">About</a>
+          <a href="../About/project.html">Project</a>
+        </div>
+      </div>
+
+      <!-- Support Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Support</button>
+        <div class="dropdown-content">
+          <a href="../Support/contact.html">Contact Us</a>
+          <a href="../Support/blog.html">Blog</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Call-to-action button -->
+  <a href="../Auth/register.html" class="cta-btn">Get Started</a>
+</header>
+
+  <hr>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h1>Solar Maintenance Services</h1>
+    <p>Ensuring your solar systems run at peak performance, every day.</p>
+  </header>
+
+  <!-- Section 1: Introduction -->
+  <section id="intro" class="section">
+    <div class="content">
+      <div class="text">
+        <h2>Why Maintenance Matters</h2>
+        <p>Solar systems are long-term investments, and like any technology, they require regular care to deliver optimal performance. At Oasis Solar, we provide comprehensive maintenance services that protect your panels, batteries, and inverters from wear and tear. Our team ensures that your system continues to generate maximum energy output, saving you money and reducing your carbon footprint. Proper maintenance also extends the lifespan of your equipment, preventing costly breakdowns and ensuring safety. With our proactive approach, you can enjoy uninterrupted clean energy while we handle the technical details. We believe maintenance is not just about fixing problems, but about preventing them before they occur.</p>
+      </div>
+      <div class="image">
+        <img src="../images/maintenance.jpg" alt="Solar maintenance overview">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Routine Inspections -->
+  <section id="routine" class="section alt">
+    <div class="content">
+      <div class="text">
+        <h2>Routine Inspections</h2>
+        <p>Routine inspections are the backbone of solar system maintenance. Our technicians conduct scheduled visits to clean panels, check wiring connections, and assess inverter and battery health. Dust, debris, and weather conditions can reduce panel efficiency, so regular cleaning is essential. We also test voltage levels, monitor energy output, and ensure all safety mechanisms are functioning correctly. These inspections help identify minor issues before they escalate into major problems. By keeping your system in top condition, we guarantee consistent energy production and peace of mind. Our inspection reports provide transparency, giving you a clear picture of your system’s health and performance.</p>
+      </div>
+      <div class="image">
+        <img src="../images/inspection-maintenance.jpg" alt="Technician inspecting solar panels">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Performance Optimization -->
+  <section id="optimization" class="section">
+    <div class="content">
+      <div class="text">
+        <h2>Performance Optimization</h2>
+        <p>Even well-installed solar systems can lose efficiency over time. Our performance optimization services ensure your system operates at its highest potential. We use advanced monitoring tools to track energy output and identify inefficiencies. If panels are underperforming, we recommend repositioning or upgrading components. Battery storage is calibrated to maximize charge and discharge cycles, while inverters are fine-tuned for seamless conversion. We also provide software updates for smart monitoring systems, ensuring you have real-time insights into your energy usage. Optimization is about squeezing every watt of power from your system, reducing waste, and increasing savings. With Oasis Solar, your system will always deliver peak performance.</p>
+      </div>
+      <div class="image">
+        <img src="../images/solar-optimazation.jpg" alt="Solar performance optimization">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Repairs & Troubleshooting -->
+  <section id="repairs" class="section alt">
+    <div class="content">
+      <div class="text">
+        <h2>Repairs & Troubleshooting</h2>
+        <p>When issues arise, our repair and troubleshooting services provide fast, reliable solutions. Whether it’s a cracked panel, faulty inverter, or degraded battery, our team is equipped to handle it. We diagnose problems using advanced diagnostic tools, ensuring accurate identification of faults. Repairs are carried out with genuine parts to maintain system integrity. We also offer troubleshooting support for software and monitoring systems, helping you resolve connectivity or data issues. Our goal is to minimize downtime and restore your system to full functionality quickly. With Oasis Solar, you can trust that your investment is protected by expert hands, ready to respond whenever needed.</p>
+      </div>
+      <div class="image">
+        <img src="../images/solar-repair.jpg" alt="Solar panel repair">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Emergency Support -->
+  <section id="emergency" class="section">
+    <div class="content">
+      <div class="text">
+        <h2>Emergency Support</h2>
+        <p>Power outages or sudden system failures can disrupt your life or business. Our emergency support services are designed to provide rapid response when you need it most. We maintain a dedicated hotline and deploy technicians promptly to restore functionality. Whether caused by extreme weather, grid instability, or equipment failure, we prioritize urgent cases to minimize downtime. Our emergency kits include spare parts and tools to handle common issues on the spot. With Oasis Solar, you’re never left in the dark — we ensure your system is back online quickly, keeping your home or business powered and secure. Reliability is our promise, even in emergencies.</p>
+      </div>
+      <div class="image">
+        <img src="../images/solar-support.jpg" alt="Emergency solar support">
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Service Packages -->
+  <section id="packages" class="section alt">
+    <div class="content">
+      <div class="text">
+        <h2>Service Packages</h2>
+        <p>We understand that every customer has unique needs, which is why we offer flexible service packages. Our Basic Package covers routine inspections and cleaning, ideal for households seeking affordable care. The Premium Package includes optimization, repairs, and priority support, perfect for businesses that rely heavily on solar energy. For large-scale installations, our Enterprise Package provides comprehensive coverage, including dedicated account managers, 24/7 monitoring, and customized maintenance schedules. Each package is designed to deliver value, ensuring your system remains efficient and reliable. With Oasis Solar, you can choose the level of support that fits your lifestyle or business goals, confident that your investment is protected.</p>
+      </div>
+      <section id="packages" class="section alt">
+  <div class="content">
+    <h2>Solar Maintenance Packages</h2>
+    <p>Choose the right plan for your solar investment. Each package is designed to meet different needs — from essential upkeep to full protection. Our goal is to keep your solar system efficient, reliable, and worry-free.</p>
+
+    <div class="packages-container">
+      <!-- Basic Care -->
+      <div class="package-box basic">
+        <i class="fas fa-search fa-3x"></i>
+        <h3>Basic Care</h3>
+        <p>Essential upkeep for optimal performance. Includes regular inspections, panel cleaning, and system checkups to ensure your solar setup runs smoothly year-round.</p>
+        <ul>
+          <li>Regular Inspections</li>
+          <li>Panel Cleaning</li>
+          <li>System Checkups</li>
+        </ul>
+        <a href="#" class="cta-btn">Learn More</a>
+      </div>
+
+      <!-- Advanced Maintenance -->
+      <div class="package-box advanced">
+         <i class="fas fa-wrench fa-3x"></i>
+        <h3>Advanced Maintenance</h3>
+        <p>Comprehensive service and performance boosts. We fine-tune efficiency, perform diagnostics, and provide monitoring support to maximize your system’s output.</p>
+        <ul>
+          <li>Efficiency Tuning</li>
+          <li>Repairs & Diagnostics</li>
+          <li>Monitoring Service</li>
+        </ul>
+        <a href="#" class="cta-btn">Learn More</a>
+      </div>
+
+      <!-- Premium Protection -->
+      <div class="package-box premium">
+       <i class="fas fa-shield-alt fa-3x"></i>
+        <h3>Premium Protection</h3>
+        <p>Complete care and emergency support. Enjoy 24/7 response, priority repairs, and full system warranty coverage for total peace of mind.</p>
+        <ul>
+          <li>24/7 Emergency Response</li>
+          <li>Priority Repairs</li>
+          <li>Full System Warranty</li>
+        </ul>
+        <a href="#" class="cta-btn">Learn More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </div>
+  </section>
+
+<!-- Section 7: Contact Form -->
+<section id="contact" class="section">
+  <div class="content">
+    <div class="text">
+      <h2>Request Maintenance Service</h2>
+      <p>Ready to keep your solar system running at peak performance? Fill out the form below to schedule a maintenance visit or request more information about our service packages. Our team will respond promptly to ensure your energy needs are met without interruption.</p>
+      
+      <form class="contact-form">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="service">Service Needed</label>
+        <select id="service" name="service" required>
+          <option value="">Select a service</option>
+          <option value="inspection">Routine Inspection</option>
+          <option value="optimization">Performance Optimization</option>
+          <option value="repairs">Repairs & Troubleshooting</option>
+          <option value="emergency">Emergency Support</option>
+          <option value="packages">Service Packages</option>
+        </select>
+
+        <label for="message">Additional Details</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+
+        <button type="submit" class="cta-btn">Submit Request</button>
+      </form>
+    </div>
+   
+  </div>
+</section>
+
+<!-- Confirmation Modal -->
+<div id="confirmationModal" class="modal">
+  <div class="modal-content">
+    <h3>Thank you!</h3>
+    <p>Your maintenance request has been submitted. Our team will contact you shortly.</p>
+    <button id="closeModal" class="cta-btn">Close</button>
+  </div>
+</div>
+
+<script>
+document.getElementById("maintenanceForm").addEventListener("submit", function(e) {
+  e.preventDefault(); // prevent actual submission
+  document.getElementById("confirmationModal").style.display = "flex";
+  this.reset(); // clear form fields
+});
+
+document.getElementById("closeModal").addEventListener("click", function() {
+  document.getElementById("confirmationModal").style.display = "none";
+});
+</script>
+
+  
+     <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-left">
+      <h3>OASIS ENERGY</h3>
+      <p>(+234 808 3887 719)</p>
+      <p>Plot 207 Garki, Abuja</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>Solar Solutions</h4>
+        <ul>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Home Solar Systems</a></li>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Home Battery Storage</a></li>
+          <li><a href="../Energy-Solution/solarBatteryStorage.html">How Solar Works</a></li>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Installation Process</a></li>
+          <li><a href="../Energy-Solution/solarBatteryStorage.html">Warranty</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Our Company</h4>
+        <ul>
+          <li><a href="../About/about.html">About</a></li>
+          <li><a href="../Support/contact.html">Contact</a></li>
+          <li><a href="../Support/blog.html">Blog</a></li>
+          <li><a href="../Services/services.html">Our Service Areas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>OASIS ENERGY</h4>
+        <ul>
+          <li><a href="#">Leadership</a></li>
+          <li><a href="#">Newsroom</a></li>
+          <li><a href="#">Licenses</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>2024 Oasis Energy Ltd. All rights reserved.</p>
+    <a href="../Auth/getAqoute.html" class="cta-btn">Start your Quote</a>
+  </div>
+</footer>
+</body>
+</html>

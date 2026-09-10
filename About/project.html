@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - Oasis Energy</title>
+    <link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+ <!-- Header -->
+ <header class="navbar">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="../Oasislogo.png" alt="Oasis Energy Logo">
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <!-- Hamburger toggle (mobile only) -->
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <!-- All links wrapped in nav-links -->
+    <div class="nav-links">
+      <a href="../Home/index.html">Home</a>
+
+      <!-- Residential Solar Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Services</button>
+        <div class="dropdown-content">
+          <a href="../Services/services.html">Services</a>
+          <a href="../Services/installation.html">Installation</a>
+          <a href="../Services/sales.html">Sales</a>
+          <a href="../Services/maintenance.html">Maintenance</a>
+        </div>
+      </div>
+
+      <!-- Energy Solutions Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)" >Energy Solutions</button>
+        <div class="dropdown-content">
+          <a href="../Energy-Solution/energySolution.html">Energy Solutions</a>
+          <a href="../Energy-Solution/betterSolarPanel.html">Better Solar Panel</a>
+          <a href="../Energy-Solution/solarBatteryStorage.html">Solar Battery Storage</a>
+        </div>
+      </div>
+
+      <!-- About Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">About Oasis</button>
+        <div class="dropdown-content">
+          <a href="../About/about.html">About</a>
+          <a href="../About/project.html">Project</a>
+          
+        </div>
+      </div>
+
+      <!-- Support Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Support</button>
+        <div class="dropdown-content">
+          <a href="../Support/contact.html">Contact Us</a>
+          <a href="../Support/blog.html">Blog</a>
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Call-to-action button -->
+  <a href="../Auth/register.html" class="cta-btn">Get Started</a>
+</header>
+
+  <hr>
+<!-- Hero Section -->
+ <section class="hero-container">
+  <!-- Slide 1 -->    
+  <section class="hero slide active">
+    <div class="hero-left">
+      <div class="hero-content">
+        <h1>Empowering Your Energy Future</h1>
+        <p>Discover how Oasis Energy transforms homes and businesses with innovative solar solutions.</p>
+        <a href="#" class="btn">LEARN MORE</a>
+      </div>
+    </div>
+  <div class="hero-right">
+      <img src="../images/installation2.jpg" alt="Solar Ring">
+    </div>
+  </section>
+
+  <!-- Slide 2 -->
+  <section class="hero slide">
+    <div class="hero-left">
+      <div class="hero-content">
+        <h1>Reliable Solar Solutions</h1>
+        <p>Clean energy for a sustainable future of your company.</p>
+        <a href="#" class="btn">LEARN MORE</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="../images/project1.jpg" alt="Solar Panels">
+    </div>
+  </section>
+
+  <!-- Slide 3 -->
+  <section class="hero slide">
+    <div class="hero-left">
+      <div class="hero-content">
+        <h1>Power Your Business</h1>
+        <p>Smart installations tailored to your needs.</p>
+        <a href="#" class="btn">CONTACT US</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="../images/resisdentailSolar3.png" alt="Solar Battery">
+    </div>
+  </section>
+
+  <!-- Pagination + Countdown -->
+  <div class="pagination">
+    <button class="dot active"></button>
+    <button class="dot"></button>
+    <button class="dot"></button>
+  </div>
+  <div class="countdown">5</div>
+</section>
+
+
+
+     
+
+  <!-- Section 1: Residential Projects -->
+  <section id="residential" class="section">
+    <div class="content">
+      <div class="text">
+        <h1>Residential Projects</h1>
+        <p>Our residential solar projects empower families with clean, affordable energy. Each installation is customized to meet household needs, ensuring maximum efficiency and long‑term savings.</p>
+        <p>We’ve transformed homes into energy‑independent hubs, reducing reliance on the grid and providing peace of mind during outages.</p>
+        <p>Our residential projects highlight the seamless integration of solar panels with modern architecture, maintaining aesthetics while delivering performance.</p>
+        <p>We prioritize safety, durability, and customer satisfaction, ensuring every project exceeds expectations.</p>
+        <p>Through these projects, we’ve helped thousands of families lower their bills and contribute to a greener planet.</p>
+      </div>
+      <div class="image">
+        <img src="../images/installation2.jpg" alt="Residential solar project">
+        <a href="../About/moreProject.html" class="cta-btn">See More Projects</a>
+      </div>
+    </div>
+  </section>
+
+ 
+     <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-left">
+      <h3>OASIS ENERGY</h3>
+      <p>(+234 808 3887 719)</p>
+      <p>Plot 207 Garki, Abuja</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>Solar Solutions</h4>
+        <ul>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Home Solar Systems</a></li>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Home Battery Storage</a></li>
+          <li><a href="../Energy-Solution/solarBatteryStorage.html">How Solar Works</a></li>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Installation Process</a></li>
+          <li><a href="../Energy-Solution/solarBatteryStorage.html">Warranty</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Our Company</h4>
+        <ul>
+          <li><a href="../About/about.html">About</a></li>
+          <li><a href="../Support/contact.html">Contact</a></li>
+          <li><a href="../Support/blog.html">Blog</a></li>
+          <li><a href="../Services/services.html">Our Service Areas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>OASIS ENERGY</h4>
+        <ul>
+          <li><a href="#">Leadership</a></li>
+          <li><a href="#">Newsroom</a></li>
+          <li><a href="#">Licenses</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>2024 Oasis Energy Ltd. All rights reserved.</p>
+    <a href="../Auth/getAqoute.html" class="cta-btn">Start your Quote</a>
+  </div>
+</footer>
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+const countdown = document.querySelector('.countdown');
+
+let currentIndex = 0;
+let timer = 5;
+let interval;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+    dots[i].classList.toggle('active', i === index);
+  });
+  currentIndex = index;
+  resetCountdown();
+}
+
+function resetCountdown() {
+  clearInterval(interval);
+  timer = 5;
+  countdown.textContent = timer;
+  interval = setInterval(() => {
+    timer--;
+    countdown.textContent = timer;
+    if (timer === 0) {
+      let nextIndex = (currentIndex + 1) % slides.length;
+      showSlide(nextIndex);
+    }
+  }, 1000);
+}
+
+// Dot click event
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => showSlide(i));
+});
+
+// Start with first slide
+showSlide(0);
+
+
+</script>
+
+
+    
+</body>
+</html>

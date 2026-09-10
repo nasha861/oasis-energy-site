@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oasis Energy</title>
+  <link rel="stylesheet" href="index1.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+</head>
+<body>
+      <!-- Header -->
+ <header class="navbar">
+  <!-- Logo -->
+  <div class="logo">
+    <img src="../Oasislogo.png" alt="Oasis Energy Logo">
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <!-- Hamburger toggle (mobile only) -->
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <!-- All links wrapped in nav-links -->
+    <div class="nav-links">
+      <a href="../Home/index.html">Home</a>
+
+      <!-- Residential Solar Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Services</button>
+        <div class="dropdown-content">
+          <a href="../Services/services.html">Services</a>
+          <a href="../Services/installation.html">Installation</a>
+          <a href="../Services/sales.html">Sales</a>
+          <a href="../Services/maintenance.html">Maintenance</a>
+        </div>
+      </div>
+
+      <!-- Energy Solutions Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Energy Solutions</button>
+        <div class="dropdown-content">
+          <a href="../Energy-Solution/energySolution.html">Energy Solution</a>
+          <a href="../Energy-Solution/betterSolarPanel.html">Better Solar Panel</a>
+          <a href="../Energy-Solution/solarBatteryStorage.html">Solar Battery Storage</a>
+        </div>
+      </div>
+
+      <!-- About Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">About Oasis</button>
+        <div class="dropdown-content">
+          <a href="../About/about.html">About</a>
+          <a href="../About/project.html">Project</a>
+        </div>
+      </div>
+
+      <!-- Support Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn" onclick="toggleDropdown(this)">Support</button>
+        <div class="dropdown-content">
+          <a href="../Support/contact.html">Contact Us</a>
+          <a href="../Support/blog.html">Blog</a>
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Call-to-action button -->
+  <a href="../Auth/register.html" class="cta-btn">Get Started</a>
+</header>
+
+
+  <hr>
+
+<!-- Hero Slider -->
+<section class="hero-slider">
+  <!-- Slide 1 -->
+  <section class="hero slide active">
+    <div class="hero-left">
+      <div class="hero-content">
+        <h1>OASIS ENERGY.<br> Your Source for Uninterrupted Power</h1>
+        <p>Panels, Batteries and Installation for Home & Business.</p>
+        <a href="../Auth/getAqoute.html" class="btn">GET A FREE QUOTE</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="../SolarRing.png" alt="Solar Ring">
+    </div>
+  </section>
+
+  <!-- Slide 2 -->
+  <section class="hero slide">
+    <div class="hero-left">
+      <div class="hero-content">
+        <h1>Reliable Solar Solutions</h1>
+        <p>Clean energy for a sustainable future.</p>
+        <a href="../Energy-Solution/energySolution.html" class="btn">LEARN MORE</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="resisdentailSolar3.png" alt="Solar Panels">
+    </div>
+  </section>
+
+  <!-- Slide 3 -->
+  <section class="hero slide">
+    <div class="hero-left">
+      <div class="hero-content">
+        <h1>Power Your Business</h1>
+        <p>Smart installations tailored to your needs.</p>
+        <a href="../Support/contact.html" class="btn">CONTACT US</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="../images/resisdentailSolar6.png" alt="Solar Battery">
+    </div>
+  </section>
+
+  <!-- Pagination + Countdown -->
+  <div class="pagination">
+    <button class="dot active"></button>
+    <button class="dot"></button>
+    <button class="dot"></button>
+  </div>
+  <div class="countdown">5</div>
+</section>
+
+
+<script>
+    const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+const countdown = document.querySelector('.countdown');
+
+let currentIndex = 0;
+let timer = 5;
+let interval;
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+    dots[i].classList.toggle('active', i === index);
+  });
+  currentIndex = index;
+  resetCountdown();
+}
+
+function resetCountdown() {
+  clearInterval(interval);
+  timer = 5;
+  countdown.textContent = timer;
+  interval = setInterval(() => {
+    timer--;
+    countdown.textContent = timer;
+    if (timer === 0) {
+      let nextIndex = (currentIndex + 1) % slides.length;
+      showSlide(nextIndex);
+    }
+  }, 1000);
+}
+
+// Dot click event
+dots.forEach((dot, i) => {
+  dot.addEventListener('click', () => showSlide(i));
+});
+
+// Start with first slide
+showSlide(0);
+
+
+</script>
+
+ <!-- Vision Section -->
+<section class="vision-section">
+  <div class="vision-image">
+    <img src="../SolarHomeWithFamily.png" alt="House with solar panels and people">
+  </div>
+  <div class="vision-text">
+    <a href="#" class="cta-btn">Our Vision</a>
+    <p>“To transform every home and business into a self-sustaining oasis of power, eliminating the uncertainty of the grid and fueling Nigeria’s future with clean, limitless energy.”</p>
+ </div>
+</section>
+
+<!-- Highlights Section -->
+<section class="highlights">
+  <div class="highlight">
+    <span class="material-symbols-outlined">award_star</span>
+    <h3>Unmatched Excellence</h3>
+    <p>Oasis embodies decades of innovation.</p>
+  </div>
+
+  <div class="highlight">
+    <span class="material-symbols-outlined">workspace_premium</span>
+    <h3>Premium Quality</h3>
+    <p>Durable high-efficiency panels.</p>
+  </div>
+
+  <div class="highlight">
+    <span class="material-symbols-outlined">energy_program_saving</span>
+    <h3>Smart Energy</h3>
+    <p>Clean and intelligent energy system.</p>
+  </div>
+</section>
+
+
+
+<!-- Panels Section -->
+<section class="panels">
+  <div class="panel">
+    <img src="../Resisdential-solar-home.jpg" alt="Residential Solar Systems">
+    <h3>Residential Solar Systems</h3>
+    <a href="../Energy-Solution/betterSolarPanel.html" class="cta-btn">Explore</a>
+  </div>
+
+  <div class="panel">
+    <img src="../solar-battery-storage.jpg" alt="Solar Battery Storage">
+    <h3>Solar Battery Storage</h3>
+    <a href="../Energy-Solution/solarBatteryStorage.html" class="cta-btn">Explore</a>
+  </div>
+
+  <div class="panel">
+    <img src="../solar-panels-installers.jpg" alt="New Homes">
+    <h3>New Homes</h3>
+    <a href="../Energy-Solution/betterSolarPanel.html" class="cta-btn">Explore</a>
+  </div>
+</section>
+
+<!-- Quote Form Section -->
+<section class="quote-section">
+  <div class="quote-left">
+    <h2>Save by Going Solar</h2>
+  </div>
+
+  <div class="quote-right">
+    <form class="quote-form">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" name="firstName" required>
+
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" name="lastName" required>
+
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Mobile Phone</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <p class="fine-print">
+        By clicking ‘Get a Quote’, I consent to receive automated text messages and prerecorded or automated telephone calls from Oasis Energy and its partners at the phone number provided. Consent is not required for purchase. Msg & data rates may apply.
+      </p>
+
+      <button type="submit" class="cta-btn">Get a Quote</button>
+    </form>
+  </div>
+</section>
+
+<!-- Clean Energy Info Section -->
+<section class="clean-energy">
+  <div class="clean-left">
+    <h2>Experience Oasis’s commitment to a brighter, cleaner energy future.</h2>
+    <div class="energy-circle"></div>
+  </div>
+
+  <div class="clean-right">
+    <div class="info-card">
+      <img src="../resisdentialSolar2.jpg" alt="Solar Panel Installation">
+      <div class="info-text">
+        <h3>How do Solar Panels Actually Work</h3>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <img src="../rooftop3.png" alt="Solar Panels for Roofs">
+      <div class="info-text">
+        <h3>Solar Panels for Roofs</h3>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <img src="../images/Homepage.webp" alt="Battery Storage">
+      <div class="info-text">
+        <h3>6 Reasons to Add Battery Storage</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Benefits Section -->
+<section class="benefits">
+  <h2>Why Choose Oasis Energy?</h2>
+  <div class="benefit-grid">
+    <div class="benefit">💡 Lower Energy Bills</div>
+    <div class="benefit">🌍 Reduce Carbon Footprint</div>
+    <div class="benefit">⚡ Reliable Power Supply</div>
+    <div class="benefit">🏠 Modern Solar Technology</div>
+  </div>
+</section>
+
+
+<!-- Testimonials -->
+<section class="testimonials">
+  <h2>What Our Customers Say</h2>
+  <blockquote>
+    "Switching to Oasis Energy was the best decision we made. Our bills are lower and our home is greener!"
+    <cite>- Sarah M.</cite>
+  </blockquote>
+</section>
+
+
+     <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-left">
+      <h3>OASIS ENERGY</h3>
+      <p>(+234 808 3887 719)</p>
+      <p>Plot 207 Garki, Abuja</p>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <div>
+        <h4>Solar Solutions</h4>
+        <ul>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Home Solar Systems</a></li>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Home Battery Storage</a></li>
+          <li><a href="../Energy-Solution/solarBatteryStorage.html">How Solar Works</a></li>
+          <li><a href="../Energy-Solution/betterSolarPanel.html">Installation Process</a></li>
+          <li><a href="../Energy-Solution/solarBatteryStorage.html">Warranty</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Our Company</h4>
+        <ul>
+          <li><a href="../About/about.html">About</a></li>
+          <li><a href="../Support/contact.html">Contact</a></li>
+          <li><a href="../Support/blog.html">Blog</a></li>
+          <li><a href="../Services/services.html">Our Service Areas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>OASIS ENERGY</h4>
+        <ul>
+          <li><a href="#">Leadership</a></li>
+          <li><a href="#">Newsroom</a></li>
+          <li><a href="#">Licenses</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>2024 Oasis Energy Ltd. All rights reserved.</p>
+    <a href="../Auth/getAqoute.html" class="cta-btn">Start your Quote</a>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
+</body>
+</html>
