@@ -3,11 +3,11 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Home/Header";   
 import Footer from "./components/Home/Footer";   
 
-import Login from "./pages/Auth/Login";
-import Register from "./pages/Auth/Register";
-import Quote from "./pages/Auth/Quote";
+import Login from "./pages/Auth/login.jsx";
+import Register from "./pages/Auth/register.jsx";
+import Quote from "./pages/Auth/quote.jsx";
 import Shop from "./pages/Auth/shop";
-import Checkout from "./pages/Auth/Checkout";
+import Checkout from "./pages/Auth/checkout.jsx";
 import Orders from "./pages/Auth/orders";
 import PaymentVerify from "./pages/Auth/PaymentVerify";
 import Dashboard from "./pages/Dashboard/Dashboard";
@@ -27,7 +27,7 @@ import MoreProject from "./pages/Public/moreProject";
 import ServicesPage from "./pages/Services/services";
 import Installation from "./pages/Services/installation";
 import Sales from "./pages/Services/sales";
-import Maintenance from "./pages/Services/maintenance";
+import Maintenance from "./pages/Services/Maintenance.jsx";
 import MyMaintenance from "./pages/Auth/MyMaintenance";
 
 import EnergySolution from "./pages/EnergySolution/energySolution";
