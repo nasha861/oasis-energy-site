@@ -1,8 +1,54 @@
-
+import { useState } from "react";
 import "./installation.css";
 import { Link } from "react-router-dom";
+import api from "../../api/api";
 
 function Installation() {
+  const [formData, setFormData] = useState({
+  systemPackage: "6aa86acbcdf922724b37e5d2",
+  address: "",
+  note: "",
+});
+
+const [loading, setLoading] = useState(false);
+const [message, setMessage] = useState("");
+const [error, setError] = useState("");
+
+const handleChange = (e) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  setLoading(true);
+  setMessage("");
+  setError("");
+
+  try {
+    await api.post("/installations", formData);
+
+    setMessage(
+      "Your installation request has been submitted successfully."
+    );
+
+    setFormData({
+      systemPackage: "6aa86acbcdf922724b37e5d2",
+      address: "",
+      note: "",
+    });
+  } catch (err) {
+    setError(
+      err.response?.data?.message ||
+        "Failed to submit installation request."
+    );
+  } finally {
+    setLoading(false);
+  }
+};
   return (
     <>
       {/* HERO SECTION */}
@@ -118,9 +164,59 @@ function Installation() {
           </div>
 
           {/* CTA */}
+         <div className="installation-request">
+            <h2>Request Solar Installation</h2>
+
+            <p>
+              Submit your installation request and our team will contact you
+              to discuss the next steps.
+            </p>
+
+            <form onSubmit={handleSubmit} className="installation-form">
+              <label htmlFor="address">Installation Address</label>
+
+              <input
+                type="text"
+                id="address"
+                name="address"
+                value={formData.address}
+                onChange={handleChange}
+                placeholder="Enter your installation address"
+                required
+              />
+
+              <label htmlFor="note">Additional Information</label>
+
+              <textarea
+                id="note"
+                name="note"
+                value={formData.note}
+                onChange={handleChange}
+                placeholder="Tell us anything important about your installation"
+                rows="5"
+              />
+
+              <button type="submit" className="btn" disabled={loading}>
+                {loading ? "Submitting..." : "Submit Installation Request"}
+              </button>
+            </form>
+
+            {message && (
+              <p className="success-message">
+                {message}
+              </p>
+            )}
+
+            {error && (
+              <p className="error-message">
+                {error}
+              </p>
+            )}
+          </div>
+
           <div className="cta">
-           <Link to="/quote" className="btn">
-            Get Started Today
+            <Link to="/quote" className="btn">
+              Get a Free Quote
             </Link>
           </div>
         </div>

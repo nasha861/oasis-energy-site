@@ -1,235 +1,246 @@
-/* General Reset */
-* {
+/* ===== ABOUT PAGE ===== */
+
+.about-page {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Roboto', sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.6;
   color: #23395B;
   background: #f9f9f9;
 }
 
-/* Header */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #23395B;
-  color: #fff;
-  padding: 1rem 2rem;
-  box-shadow: #78BCE0;
-}
-.header .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #F9D649;
-}
-.nav a {
-  margin: 0 1rem;
-  color: #fff;
-  text-decoration: none;
-}
-.cta-btn {
-  background: #F18F01;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  text-decoration: none;
-}
 
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-}
+/* ===== HERO ===== */
 
-/* Mobile styles */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: #23395B;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    padding: 20px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}
-
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* ABOUT HERO */
-.about-hero {
+.about-page .about-hero {
   height: 80vh;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   position: relative;
 }
 
-/* Overlay */
-.about-hero::before {
+.about-page .about-hero::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   background: rgba(0, 0, 0, 0.5);
 }
 
-.overlay {
+.about-page .overlay {
   position: relative;
   z-index: 2;
   color: white;
   text-align: center;
   top: 50%;
   transform: translateY(-50%);
+  padding: 20px;
 }
 
-/* MISSION & VISION */
-.mission-vision {
+.about-page .overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.about-page .overlay p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1.2rem;
+}
+
+
+/* ===== MAIN SECTIONS ===== */
+
+.about-page .about-section {
   padding: 60px 20px;
-  background: #f5f5f5;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.mv-container {
+.about-page .about-section-alt {
+  background: #f6faff;
+}
+
+.about-page .about-content {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
+  align-items: center;
+  gap: 60px;
 }
 
-.mv-box {
-  flex: 1;
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
+.about-page .about-text {
+  flex: 1 1 400px;
+  padding: 20px;
+  text-align: justify;
 }
 
-/* WHY US */
-.why-us {
-  padding: 60px 20px;
-  text-align: center;
+.about-page .about-text h2 {
+  color: #001f3f;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
-.why-container {
+.about-page .about-text p {
+  margin-bottom: 18px;
+}
+
+
+/* ===== IMAGES ===== */
+
+.about-page .about-image {
+  flex: 1 1 50%;
+  text-align: right;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   margin-top: 30px;
 }
 
-.why-card {
+.about-page .about-image img {
+  max-width: 100%;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.about-page .about-image-multiple img {
+  flex: 1 1 45%;
+  min-width: 250px;
+}
+
+
+/* ===== VISIONARY ===== */
+
+.about-page .visionary-image {
+  justify-content: center;
+  align-items: center;
+}
+
+.about-page .visionary-image img {
+  max-width: 400px;
+  width: 100%;
+}
+
+.about-page .visionary-image h2 {
+  flex-basis: 100%;
+  text-align: center;
+  margin-top: 12px;
+  font-weight: bold;
+  font-size: 22px;
+  color: #333;
+}
+
+
+/* ===== WHY CHOOSE US ===== */
+
+.about-page .why-us {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about-page .why-us > h2 {
+  color: #001f3f;
+  margin-bottom: 10px;
+}
+
+.about-page .why-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about-page .why-card {
   flex: 1;
   min-width: 200px;
   background: #0b1d2a;
   color: white;
   padding: 25px;
   border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-page .why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.about-page .why-card h3 {
+  margin-bottom: 10px;
+}
+
+.about-page .why-card p {
+  margin: 0;
 }
 
 
-/* Footer */
-.footer {
-  background: #23395B; /* Dark Blue */
-  color: #fff;
-  padding: 3rem 2rem;
-}
+/* ===== MOBILE ===== */
 
-.footer-top {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-}
-
-.footer-left {
-  flex: 1 1 250px;
-}
-.footer-left h3 {
-  color: #F9D649; /* Sun Yellow */
-  margin-bottom: 1rem;
-}
-.footer-left p {
-  margin: 0.3rem 0;
-}
-.social-icons a {
-  margin-right: 0.5rem;
-  color: #fff;
-  font-size: 1.2rem;
-  text-decoration: none;
-}
-.social-icons a:hover {
-  color: #F18F01; /* Orange hover */
-}
-
-.footer-links {
-  flex: 2 1 500px;
-  display: flex;
-  justify-content: space-around;
-}
-.footer-links h4 {
-  color: #F18F01;
-  margin-bottom: 1rem;
-}
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-.footer-links li {
-  margin-bottom: 0.5rem;
-}
-.footer-links a {
-  color: #fff;
-  text-decoration: none;
-}
-.footer-links a:hover {
-  color: #4CAF4F; /* Green hover */
-}
-
-.footer-bottom {
-  text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.2);
-  padding-top: 1rem;
-}
-.footer-bottom .cta-btn {
-  display: inline-block;
-  margin-top: 1rem;
-  background: #F18F01;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-}
-.footer-bottom .cta-btn:hover {
-  background: #4CAF4F;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
-  .footer-top {
+
+  .about-page .about-hero {
+    height: 60vh;
+  }
+
+  .about-page .overlay h1 {
+    font-size: 2rem;
+  }
+
+  .about-page .overlay p {
+    font-size: 1rem;
+  }
+
+  .about-page .about-content {
     flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-page .about-text,
+  .about-page .about-image {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .about-page .about-text {
+    text-align: justify;
+  }
+
+  .about-page .about-text h2 {
     text-align: center;
   }
-  .footer-links {
+
+  .about-page .about-image {
+    text-align: center;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .about-page .about-image img {
+    max-width: 100%;
+  }
+
+  .about-page .about-image-multiple {
     flex-direction: column;
-    margin-top: 2rem;
+  }
+
+  .about-page .about-image-multiple img {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .about-page .why-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-page .why-card {
+    width: 100%;
+    max-width: 500px;
   }
 }
-
-
-

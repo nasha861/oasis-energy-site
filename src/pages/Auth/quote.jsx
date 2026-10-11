@@ -1,9 +1,12 @@
-
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import api from "../../api/api";
 import bgImage from "../../assets/Homepage.webp";
 import "./quote.css";
 
 function Quote() {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -16,6 +19,11 @@ function Quote() {
 
   const [errors, setErrors] = useState({});
   const [showPopup, setShowPopup] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const closePopup = () => {
+  setShowPopup(false);
+};
 
   // Handle normal text inputs
   const handleChange = (e) => {
@@ -79,24 +87,35 @@ function Quote() {
   };
 
   // Submit form
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const isValid = validateForm();
+  const isValid = validateForm();
 
-    if (!isValid) {
-      return;
-    }
+  if (!isValid) {
+    return;
+  }
 
-    console.log("Quote request:", formData);
+  try {
+    setSubmitting(true);
+
+    const response = await api.post("/quotes", formData);
+
+    console.log("Quote request submitted:", response.data);
 
     setShowPopup(true);
-  };
+  } catch (error) {
+    console.error("Quote submission failed:", error);
 
-  // Close confirmation popup
-  const closePopup = () => {
-    setShowPopup(false);
-  };
+    alert(
+      error.response?.data?.message ||
+        "Quote submission failed. Please try again."
+    );
+  } finally {
+    setSubmitting(false);
+  }
+};
+
 
   return (
     <section
@@ -263,47 +282,103 @@ function Quote() {
             </div>
           </div>
 
-          {/* Homeowner */}
-          <div className="form-group homeowner">
-            <label>
-              <input
-                type="checkbox"
-                name="homeowner"
-                checked={formData.homeowner}
-                onChange={handleHomeownerChange}
-              />
-              I am a homeowner
-            </label>
-          </div>
+         {/* Homeowner */}
+        <div className="form-group homeowner">
+          <label>
+            <input
+              type="checkbox"
+              name="homeowner"
+              checked={formData.homeowner}
+              onChange={handleHomeownerChange}
+            />
+            I am a homeowner
+          </label>
+        </div>
 
-          {/* Submit */}
-          <button type="submit" className="btn">
-            Get a Free Quote
-          </button>
+       <button
+        type="submit"
+        className="quote-submit-btn"
+        disabled={submitting}
+      >
+        {submitting ? "Submitting..." : "Get My Free Quote"}
+      </button>
+
+        <div className="quote-auth-links">
+          <p>
+            Already have an account?{" "}
+            <Link to="/login">Login</Link>
+          </p>
+
+          <p>
+            New to Oasis Energy?{" "}
+            <Link to="/register">Create an Account</Link>
+          </p>
+        </div>
+        
         </form>
       </div>
 
-      {/* Confirmation Popup */}
-      {showPopup && (
-        <div className="popup">
-          <div className="popup-content">
-            <h3>Thank you!</h3>
+     {/* Confirmation Popup */}
+{showPopup && (
+  <div className="popup">
+    <div className="popup-content">
+      <div className="quote-success-icon">✓</div>
 
-            <p>
-              Your request has been submitted. We'll contact you
-              soon with your free solar quote.
-            </p>
+      <h3>Quote Request Submitted!</h3>
 
-            <button
-              type="button"
-              onClick={closePopup}
-              className="btn"
-            >
-              Close
-            </button>
-          </div>
-        </div>
-      )}
+      <p>
+        Thank you for choosing Oasis Energy. Our team will
+        review your request and contact you soon.
+      </p>
+
+      <div className="quote-popup-actions">
+        <button
+          type="button"
+          className="quote-dashboard-btn"
+          onClick={() => navigate("/dashboard")}
+        >
+          Go to Dashboard
+        </button>
+
+        <button
+          type="button"
+          className="quote-shopping-btn"
+          onClick={() => navigate("/auth/shop")}
+        >
+          Continue Shopping
+        </button>
+
+        <button
+          type="button"
+          className="quote-another-btn"
+          onClick={() => {
+            setShowPopup(false);
+            setFormData({
+              firstName: "",
+              lastName: "",
+              address: "",
+              email: "",
+              phone: "",
+              source: [],
+              homeowner: false,
+            });
+            setErrors({});
+          }}
+        >
+          Request Another Quote
+        </button>
+
+        <button
+          type="button"
+          className="quote-another-btn"
+          onClick={closePopup}
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+)}
     </section>
   );
 }

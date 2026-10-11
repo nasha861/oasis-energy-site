@@ -229,3 +229,100 @@
     padding: 25px 20px;
   }
 }
+
+/* ========================================
+   INSTALLATION REQUEST FORM
+======================================== */
+
+.installation-request {
+  max-width: 700px;
+  margin: 60px auto 0;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.installation-request h2 {
+  text-align: center;
+  color: #006400;
+  margin-bottom: 10px;
+}
+
+.installation-request > p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.installation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.installation-form label {
+  font-weight: bold;
+  color: #23395B;
+  margin-top: 10px;
+}
+
+.installation-form input,
+.installation-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.installation-form input:focus,
+.installation-form textarea:focus {
+  outline: none;
+  border-color: #006400;
+  box-shadow: 0 0 0 2px rgba(0, 100, 0, 0.1);
+}
+
+.installation-form textarea {
+  resize: vertical;
+}
+
+.installation-form .btn {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.installation-form .btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.success-message {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 5px;
+  background: #d4edda;
+  color: #155724;
+  text-align: center;
+}
+
+.error-message {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 5px;
+  background: #f8d7da;
+  color: #721c24;
+  text-align: center;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .installation-request {
+    padding: 25px 20px;
+    margin-top: 40px;
+  }
+}

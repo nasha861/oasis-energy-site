@@ -1,0 +1,185 @@
+
+/* ===== BETTER SOLAR PANELS PAGE ===== */
+
+.better-solar-page {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #23395B;
+  background: #f9f9f9;
+}
+
+
+/* ===== HERO ===== */
+
+.better-solar-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 600px;
+  padding: 160px 10px;
+  color: #fff;
+  background: url("/images/installer1.webp") no-repeat center center / cover;
+}
+
+.better-solar-hero-left {
+  flex: 1;
+  width: 100%;
+  min-width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.better-solar-hero-left > img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.better-solar-hero-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(0, -50%);
+  color: #D9E2FF;
+  text-align: left;
+  max-width: 600px;
+  margin-top: 50px;
+}
+
+
+
+.better-solar-hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.better-solar-hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 90px;
+}
+
+
+/* ===== BUTTON ===== */
+
+.better-solar-page .better-solar-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #FFD700;
+  color: #001f3f;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.better-solar-page .better-solar-btn:hover {
+  background: #FFC300;
+}
+
+
+/* ===== CONTENT SECTIONS ===== */
+
+.better-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.better-section-alt {
+  background: #f6faff;
+}
+
+.better-section h2 {
+  color: #001f3f;
+  margin-bottom: 20px;
+}
+
+.better-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.better-text {
+  flex: 1 1 400px;
+  padding: 20px;
+  text-align: justify;
+}
+
+.better-text p {
+  margin-bottom: 20px;
+}
+
+.better-text ol {
+  padding-left: 25px;
+}
+
+.better-text li {
+  margin-bottom: 12px;
+}
+
+.better-image {
+  flex: 1 1 50%;
+  padding: 20px;
+}
+
+.better-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin-bottom: 20px;
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+
+  .better-solar-hero {
+    min-height: 500px;
+    padding: 4rem 1rem;
+  }
+
+  .better-solar-hero-content {
+    position: static;
+    transform: none;
+    max-width: 100%;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .better-solar-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .better-solar-hero-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  .better-content {
+    flex-direction: column;
+  }
+
+  .better-text,
+  .better-image {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .better-text {
+    text-align: justify;
+  }
+
+  .better-image {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .better-image img {
+    width: 100%;
+  }
+}

@@ -31,6 +31,41 @@ body {
 }
 
 /* ========================================
+   ADMIN NAVIGATION
+   ======================================== */
+
+.admin-dropdown .dropdown-content {
+  min-width: 210px;
+}
+
+/* Admin dropdown items */
+
+.admin-dropdown .dropdown-content a {
+  color: #23395B;
+  background-color: #ffffff;
+}
+
+.admin-dropdown .dropdown-content a:hover {
+  background-color: #F5BF0F;
+  color: #23395B;
+}
+
+/* ========================================
+   MOBILE ADMIN DROPDOWN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .admin-dropdown {
+    width: 100%;
+  }
+
+  .admin-dropdown .dropdown-content {
+    position: static;
+    width: 100%;
+    box-shadow: none;
+  }
+}
+/* ========================================
    LOGO
    ======================================== */
 
@@ -48,6 +83,192 @@ body {
   height: 50px;
   width: auto;
   display: block;
+}
+
+/* ========================================
+   HEADER NAVIGATION FIX
+   ======================================== */
+
+@media (min-width: 769px) {
+  .header {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+
+  .dropdown {
+    position: relative;
+  }
+
+  .dropdown-content {
+    top: 100%;
+    left: 0;
+    margin-top: 2px;
+  }
+}
+
+
+/* ========================================
+   MOBILE NAVIGATION
+   ======================================== */
+
+@media (max-width: 768px) {
+
+  .header {
+    padding: 0.8rem 1rem;
+    flex-wrap: wrap;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+
+  .nav {
+    margin-left: auto;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #23395B;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px 0;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links > a,
+  .nav-links > .dropdown {
+    width: 100%;
+  }
+
+  .nav-links a,
+  .dropbtn {
+    width: 100%;
+    text-align: left;
+    padding: 14px 20px;
+  }
+
+  .dropdown-content {
+    position: static;
+    width: 100%;
+    min-width: 100%;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .nav-links .dropdown-content a {
+    padding-left: 40px;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .dropdown-content.show {
+    display: block;
+  }
+
+  .cta-btn {
+    margin-left: 10px;
+    padding: 0.6rem 0.9rem;
+  }
+}
+/* ========================================
+   ADMIN HEADER - DESKTOP ALIGNMENT
+   ======================================== */
+
+@media (min-width: 769px) {
+
+  .header {
+    flex-wrap: nowrap;
+  }
+
+  .logo {
+    flex-shrink: 0;
+  }
+
+  .nav {
+    flex: 1;
+    min-width: 0;
+    margin: 0 10px;
+  }
+
+  .nav-links {
+    flex-wrap: nowrap;
+    white-space: nowrap;
+  }
+
+  .nav-links > a,
+  .nav-links > .dropdown {
+    flex-shrink: 0;
+  }
+
+  .dropbtn {
+    white-space: nowrap;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .cta-btn {
+    flex-shrink: 0;
+  }
+
+  .admin-dropdown .dropdown-content {
+    left: auto;
+    right: 0;
+  }
+}
+
+/* ========================================
+   LOGOUT BUTTON
+   ======================================== */
+
+.logout-btn {
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.logout-btn:hover {
+  background: #a93226;
+}
+
+@media (max-width: 768px) {
+  .logout-btn {
+    margin-left: 10px;
+    padding: 0.6rem 0.9rem;
+  }
 }
 
 /* ========================================
@@ -97,76 +318,50 @@ body {
   border-radius: 4px;
 }
 
-/* ========================================
-   DROPDOWN
-   ======================================== */
+/* ===== DROPDOWN ===== */
 
 .dropdown {
   position: relative;
 }
 
-/* Dropdown arrow */
 
-.dropbtn span {
-  font-size: 10px;
-  margin-left: 5px;
-}
-
-/* Dropdown menu */
 
 .dropdown-content {
   display: none;
-
   position: absolute;
-
   top: 100%;
   left: 0;
-
-  min-width: 190px;
-
   background-color: #ffffff;
-
+  min-width: 200px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-
-  border-radius: 0 0 5px 5px;
-
+  z-index: 1000;
+  border-radius: 4px;
   overflow: hidden;
-
-  z-index: 2000;
 }
 
-/* Desktop hover */
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* React click */
-
-.dropdown-content.show {
-  display: block;
-}
-
-/* Dropdown links */
-
-.dropdown-content a {
-  color: #004d40;
-
+/* IMPORTANT: dark text inside dropdown */
+.nav-links .dropdown-content a {
+  color: #23395B;
+  background-color: #ffffff;
   padding: 12px 16px;
-
   text-decoration: none;
-
   display: block;
-
   white-space: nowrap;
 }
 
-.dropdown-content a:hover {
-  background-color: #f1f1f1;
-
+/* Dropdown item hover */
+.nav-links .dropdown-content a:hover {
+  background-color: #F5BF0F;
   color: #23395B;
+}
 
-  border-radius: 0;
+
+/* Desktop dropdown */
+
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
 }
 
 /* ========================================
@@ -221,114 +416,9 @@ body {
    MOBILE
    ======================================== */
 
-@media (max-width: 768px) {
-
-  .header {
-    padding: 0.8rem 1rem;
-  }
-
-  .logo img {
-    height: 45px;
-  }
-
-  .nav {
-    margin-left: auto;
-    margin-right: 10px;
-  }
-
-  /* Hamburger */
-
-  .menu-toggle {
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-content {
     display: block;
-  }
-
-  /* Main mobile menu */
-
-  .nav-links {
-    display: none;
-
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: 0;
-
-    width: 100%;
-
-    background-color: #23395B;
-
-    position: absolute;
-
-    top: 100%;
-
-    left: 0;
-
-    padding: 1rem;
-
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  /* Mobile links */
-
-  .nav-links > a,
-  .dropbtn {
-    width: 100%;
-
-    text-align: left;
-
-    padding: 14px;
-  }
-
-  /* Mobile dropdown */
-
-  .dropdown {
-    width: 100%;
-  }
-
-  .dropdown-content {
-    position: static;
-
-    width: 100%;
-
-    min-width: 0;
-
-    box-shadow: none;
-
-    background-color: #2c4a70;
-
-    border-radius: 0;
-
-    display: none;
-  }
-
-  /* Opened by React */
-
-  .dropdown-content.show {
-    display: block;
-  }
-
-  .dropdown-content a {
-    color: #F18F01;
-
-    padding: 10px 20px;
-  }
-
-  .dropdown-content a:hover {
-    background-color: #385d89;
-
-    color: #D9E2FF;
-  }
-
-  /* Get Started */
-
-  .cta-btn {
-    padding: 0.6rem 0.8rem;
-
-    font-size: 14px;
   }
 }
 
@@ -685,11 +775,14 @@ body {
 
 
 
-/* Quote Section Layout */
+/* ========================================
+   QUOTE SECTION
+   ======================================== */
+
 .quote-section {
   display: flex;
   flex-wrap: wrap;
-  background: #23395B; /* Dark Blue background */
+  background: #23395B;
   color: #fff;
   padding: 3rem 2rem;
 }
@@ -700,8 +793,13 @@ body {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  background: radial-gradient(circle at left, #F9D649, transparent 70%);
+  background: radial-gradient(
+    circle at left,
+    #F9D649,
+    transparent 70%
+  );
 }
+
 .quote-left h2 {
   font-size: 2rem;
   font-weight: bold;
@@ -716,12 +814,17 @@ body {
   border-radius: 8px;
 }
 
-.quote-form label {
+.quote-form {
+  width: 100%;
+}
+
+.homepage-quote-form label {
   display: block;
   margin-top: 1rem;
   font-weight: bold;
 }
-.quote-form input {
+
+.homepage-quote-form input {
   width: 100%;
   padding: 0.5rem;
   margin-top: 0.3rem;
@@ -735,7 +838,7 @@ body {
   color: #555;
 }
 
-.quote-form .cta-btn {
+.homepage-quote-form .cta-btn {
   background: #F18F01;
   color: #fff;
   padding: 0.75rem 1.5rem;
@@ -745,18 +848,31 @@ body {
   cursor: pointer;
   transition: background 0.3s ease;
 }
-.quote-form .cta-btn:hover {
+
+.homepage-quote-form .cta-btn:hover {
   background: #4CAF4F;
 }
 
-/* Responsive */
+.quote-success {
+  margin-top: 1rem;
+  color: #4CAF4F;
+  font-weight: bold;
+}
+
+/* Quote Section Mobile */
+
 @media (max-width: 768px) {
   .quote-section {
     flex-direction: column;
     text-align: center;
   }
+
   .quote-right {
     margin-top: 2rem;
+  }
+
+  .quote-form {
+    text-align: left;
   }
 }
 
@@ -974,6 +1090,53 @@ body {
   .footer-links {
     flex-direction: column;
     margin-top: 2rem;
+  }
+}
+
+
+/* ========================================
+   CUSTOMER MAINTENANCE NAVIGATION
+======================================== */
+
+.nav-links > a[href="/auth/my-maintenance"] {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 12px;
+  display: block;
+  font-size: 15px;
+  font-family: inherit;
+  white-space: nowrap;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-links > a[href="/auth/my-maintenance"]:hover,
+.nav-links > a[href="/auth/my-maintenance"]:focus-visible {
+  background-color: #F5BF0F;
+  color: #23395B;
+  outline-offset: 3px;
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+  .nav-links > a[href="/auth/my-maintenance"] {
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: 0;
+    font-size: 16px;
+  }
+}
+
+
+/* Keep the Support dropdown away from the Logout button */
+@media (min-width: 769px) {
+  .support-dropdown {
+    position: relative;
+  }
+
+  .support-dropdown .dropdown-content {
+    left: auto;
+    right: 0;
   }
 }
 

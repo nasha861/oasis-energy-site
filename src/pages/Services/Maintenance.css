@@ -1,0 +1,282 @@
+
+
+
+/* ===== HERO ===== */
+
+.maintenance-page .hero {
+  background: url(
+"/images/maintenance1.jpeg") no-repeat center center / cover;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+  position: relative;
+}
+
+.maintenance-page .hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.maintenance-page .hero h1,
+.maintenance-page .hero p {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ===== SECTIONS ===== */
+
+.maintenance-page .section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: justify;
+}
+
+.maintenance-page .section.alt {
+  background: #f5f9f6;
+}
+
+.maintenance-page .section .content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+}
+
+.maintenance-page .section .text {
+  flex: 1 1 50%;
+}
+
+.maintenance-page .section .image {
+  flex: 1 1 40%;
+  text-align: right;
+}
+
+.maintenance-page .section .image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ===== PACKAGES ===== */
+
+.maintenance-page #packages {
+  text-align: center;
+  padding: 60px 20px;
+  max-width: none;
+}
+
+.maintenance-page #packages h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.maintenance-page #packages p {
+  font-size: 16px;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.maintenance-page .packages-content {
+  display: block !important;
+}
+
+.maintenance-page .packages-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.maintenance-page .package-box {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.maintenance-page .package-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.maintenance-page .package-box i {
+  margin-bottom: 15px;
+}
+
+.maintenance-page .package-box h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.maintenance-page .package-box p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.maintenance-page .package-box ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.maintenance-page .package-box ul li {
+  font-size: 15px;
+  color: #444;
+  margin: 5px 0;
+}
+
+
+/* Package colors */
+
+.maintenance-page .basic {
+  border-top: 5px solid #4CAF50;
+}
+
+.maintenance-page .advanced {
+  border-top: 5px solid #FF9800;
+}
+
+.maintenance-page .premium {
+  border-top: 5px solid #2196F3;
+}
+
+
+/* ===== CONTACT FORM ===== */
+
+.maintenance-page .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.maintenance-page .contact-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.maintenance-page .contact-form input,
+.maintenance-page .contact-form select,
+.maintenance-page .contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.maintenance-page .contact-form button {
+  background: #ffcc00;
+  color: #333;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.maintenance-page .contact-form button:hover {
+  background: #ffdb4d;
+}
+
+
+/* ===== MODAL ===== */
+
+.maintenance-page .modal {
+  display: flex;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.maintenance-page .modal-content {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  margin: auto;
+}
+
+.maintenance-page .modal-content h3 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.maintenance-page .modal-content p {
+  margin-bottom: 20px;
+}
+
+
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+
+ 
+  .maintenance-page .hero {
+    padding: 90px 20px;
+  }
+
+  .maintenance-page .hero h1 {
+    font-size: 30px;
+  }
+
+  .maintenance-page .section {
+    padding: 45px 20px;
+  }
+
+  .maintenance-page .section .content {
+    flex-direction: column;
+  }
+
+  .maintenance-page .section .text,
+  .maintenance-page .section .image {
+    flex: 1 1 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .maintenance-page .section .text {
+    text-align: justify;
+  }
+
+  .maintenance-page .packages-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .maintenance-page .package-box {
+    width: 90%;
+    box-sizing: border-box;
+  }
+
+  .maintenance-page .contact-form {
+    width: 100%;
+  }
+
+ 
+}

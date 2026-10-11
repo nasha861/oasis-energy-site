@@ -12,9 +12,12 @@
 .quote-form::after {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
 }
 
 .form-container {
@@ -22,7 +25,7 @@
   max-width: 600px;
   margin: 0 auto;
   z-index: 1;
-  background: rgba(255,255,255,0.1);
+  background: rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(6px);
   padding: 40px;
   border-radius: 10px;
@@ -30,13 +33,16 @@
 
 .form-container h2 {
   font-size: 2em;
-  color: #FFD700;
-  margin-bottom: 10px;
+  color: #F5BF0F;
+  margin-bottom: 15px;
+  line-height: 1.3;
 }
 
 .form-container p {
   margin-bottom: 30px;
   font-size: 1.1em;
+  color: #ffffff;
+  line-height: 1.7;
 }
 
 .form-group {
@@ -48,6 +54,7 @@
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
+  color: #ffffff;
 }
 
 .form-group input {
@@ -73,21 +80,71 @@
   background: #004d00;
 }
 
+.quote-submit-btn {
+  width: 100%;
+  padding: 14px 20px;
+  margin-top: 10px;
+  background: #F5BF0F;
+  color: #23395B;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.quote-submit-btn:hover {
+  background: #F18F01;
+  transform: translateY(-2px);
+}
+
+.quote-submit-btn:active {
+  transform: translateY(0);
+}
+
+
+/* ===== LOGIN / REGISTER LINKS ===== */
+
+.quote-auth-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.quote-auth-links p {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.quote-auth-links a {
+  color: #F5BF0F;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.quote-auth-links a:hover {
+  color: #F18F01;
+  text-decoration: underline;
+}
 
 .error-message {
   color: #ff4444;
   font-size: 0.85em;
-  display: none;
+  display: block;
+  margin-top: 5px;
 }
 
 .popup {
-  display: none;
+  display: flex;
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
+  z-index: 2000;
 }
 
 .popup-content {
@@ -103,4 +160,96 @@
   margin-bottom: 15px;
 }
 
+/* ========================================
+   QUOTE SUCCESS POPUP
+   ======================================== */
 
+.quote-success-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e6f6ed;
+  color: #21864b;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.popup-content h3 {
+  margin-bottom: 12px;
+}
+
+.popup-content p {
+  line-height: 1.7;
+}
+
+.quote-popup-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.quote-popup-actions button {
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 6px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.quote-popup-actions button:hover {
+  transform: translateY(-1px);
+}
+
+.quote-dashboard-btn {
+  background: #23395b;
+  color: #fff;
+}
+
+.quote-dashboard-btn:hover {
+  background: #192b46;
+}
+
+.quote-shopping-btn {
+  background: #e8edf4;
+  color: #23395b;
+}
+
+.quote-shopping-btn:hover {
+  background: #dbe3ef;
+}
+
+.quote-another-btn {
+  background: #f5f5f5;
+  color: #333;
+  border: 1px solid #ddd !important;
+}
+
+.quote-another-btn:hover {
+  background: #eaeaea;
+}
+
+.quote-popup-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.quote-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+@media (max-width: 480px) {
+  .popup-content {
+    width: calc(100% - 32px);
+    max-width: 100%;
+    padding: 24px 18px;
+  }
+}

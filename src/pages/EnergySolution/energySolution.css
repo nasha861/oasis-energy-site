@@ -1,0 +1,159 @@
+
+/* ===== ENERGY SOLUTION PAGE ===== */
+
+.energy-solution-page {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #23395B;
+  background: #f9f9f9;
+}
+
+
+/* ===== HERO ===== */
+
+.energy-hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 600px;
+  padding: 160px 10px;
+  color: #fff;
+  background: url("/images/installer1.webp") no-repeat center center / cover;
+}
+
+.energy-hero-left {
+  flex: 1;
+  width: 100%;
+  min-width: 300px;
+  text-align: center;
+  position: relative;
+}
+
+.energy-hero-left > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.energy-hero-content {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(0, -50%);
+  color: #D9E2FF;
+  text-align: left;
+  max-width: 600px;
+  margin-top: 50px;
+}
+
+.energy-hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.energy-hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 90px;
+}
+
+
+/* ===== BUTTON ===== */
+
+.energy-solution-page .btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #FFD700;
+  color: #001f3f;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.energy-solution-page .btn:hover {
+  background: #FFC300;
+}
+
+
+/* ===== INTRODUCTION ===== */
+
+.energy-intro {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.energy-intro h1 {
+  color: #001f3f;
+  margin-bottom: 20px;
+}
+
+.energy-intro p {
+  font-size: 1.1rem;
+}
+
+
+/* ===== PROMO SECTIONS ===== */
+
+.energy-solution-page section.promo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 3rem 2rem;
+}
+
+.energy-solution-page section.promo:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.promo-text {
+  flex: 1 1 50%;
+  padding: 20px;
+}
+
+.promo-text h2 {
+  color: #006400;
+  margin-bottom: 15px;
+}
+
+.promo-image {
+  flex: 1 1 400px;
+  padding: 1rem;
+}
+
+.promo-image img {
+  width: 80%;
+  border-radius: 10px;
+  height: auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+
+  .energy-hero {
+    min-height: 500px;
+    padding: 4rem 1rem;
+  }
+
+  .energy-hero-content {
+    position: static;
+    transform: none;
+    max-width: 100%;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .energy-hero-content h1 {
+    font-size: 32px;
+  }
+
+  .energy-hero-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}

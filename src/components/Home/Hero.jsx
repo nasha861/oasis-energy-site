@@ -16,8 +16,8 @@ function Hero() {
       ),
       description:
         "Panels, Batteries and Installation for Home & Business.",
-      buttonText: "GET A FREE QUOTE",
-      buttonLink: "/contact",
+     buttonText: "GET A FREE QUOTE",
+     buttonLink: "#quote",
       image: "/images/SolarRing.png",
       imageAlt: "Solar Ring",
     },
@@ -88,9 +88,15 @@ function Hero() {
 
               <p>{slide.description}</p>
 
+             {slide.buttonLink.startsWith("#") ? (
+              <a href={slide.buttonLink} className="btn">
+                {slide.buttonText}
+              </a>
+            ) : (
               <Link to={slide.buttonLink} className="btn">
                 {slide.buttonText}
               </Link>
+            )}
 
             </div>
           </div>

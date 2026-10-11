@@ -1,0 +1,210 @@
+
+/* ===== BLOG PAGE ===== */
+
+.blog-page {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f9f9f9;
+}
+
+
+/* ===== HERO ===== */
+
+.blog-page .blog-hero {
+  background: url("/images/blog.jpg") no-repeat center center / cover;
+  color: #fff;
+  text-align: center;
+  min-height: 40vh;
+  padding: 120px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-page .blog-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.blog-page .blog-hero h1,
+.blog-page .blog-hero p {
+  position: relative;
+  z-index: 1;
+}
+
+.blog-page .blog-hero h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.blog-page .blog-hero p {
+  font-size: 18px;
+}
+
+
+/* ===== BLOG SECTIONS ===== */
+
+.blog-page .blog-section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.blog-page .blog-section-alt {
+  background: #f5f9f6;
+}
+
+.blog-page .blog-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+}
+
+.blog-page .blog-text {
+  flex: 1 1 50%;
+  text-align: justify;
+}
+
+.blog-page .blog-text h2 {
+  color: #23395B;
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.blog-page .blog-text p {
+  color: #444;
+}
+
+
+/* ===== BLOG IMAGES ===== */
+
+.blog-page .blog-image {
+  flex: 1 1 40%;
+  text-align: right;
+}
+
+.blog-page .blog-image img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* ===== SUBSCRIPTION ===== */
+
+.blog-page .blog-subscribe {
+  margin-top: 25px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.blog-page .blog-subscribe input {
+  padding: 12px;
+  flex: 1;
+  min-width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.blog-page .blog-subscribe-btn {
+  background: #ffcc00;
+  color: #333;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.blog-page .blog-subscribe-btn:hover {
+  background: #ffdb4d;
+}
+
+
+/* ===== SUCCESS MESSAGE ===== */
+
+.blog-page .blog-success {
+  margin-top: 15px;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+
+/* ===== PULSE ANIMATION ===== */
+
+.blog-page .blog-subscribe-btn {
+  animation: blogPulse 2s ease-in-out infinite;
+}
+
+@keyframes blogPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* ===== MOBILE ===== */
+
+@media (max-width: 768px) {
+
+  .blog-page .blog-hero {
+    min-height: 35vh;
+    padding: 90px 20px;
+  }
+
+  .blog-page .blog-hero h1 {
+    font-size: 30px;
+  }
+
+  .blog-page .blog-hero p {
+    font-size: 16px;
+  }
+
+  .blog-page .blog-content {
+    flex-direction: column;
+  }
+
+  .blog-page .blog-text,
+  .blog-page .blog-image {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .blog-page .blog-text {
+    text-align: justify;
+  }
+
+  .blog-page .blog-image {
+    text-align: center;
+  }
+
+  .blog-page .blog-subscribe {
+    flex-direction: column;
+  }
+
+  .blog-page .blog-subscribe input,
+  .blog-page .blog-subscribe-btn {
+    width: 100%;
+  }
+
+}
+

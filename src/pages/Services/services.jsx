@@ -14,6 +14,7 @@ const services = [
       "Grid & off-grid solutions",
     ],
     button: "Get Started",
+    link: "/services/installation",
   },
   {
     title: "Maintenance",
@@ -25,6 +26,7 @@ const services = [
       "Performance monitoring",
     ],
     button: "Schedule Service",
+    link: "/services/maintenance",
   },
   {
     title: "Solar Sales",
@@ -36,6 +38,7 @@ const services = [
       "Expert consultation",
     ],
     button: "View Products",
+    link: "/auth/shop",
   },
 ];
 
@@ -87,9 +90,9 @@ function Services() {
                 ))}
               </ul>
 
-              <button type="button">
+              <Link to={service.link} className="service-button">
                 {service.button}
-              </button>
+              </Link>
             </div>
           ))}
         </div>
