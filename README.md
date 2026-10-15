@@ -5,8 +5,14 @@ OasisEnergy is a full-stack solar energy management platform built with the **ME
 The project demonstrates practical experience in **React.js frontend development, REST API development, MongoDB database management, JWT authentication, role-based access control, and full-stack application architecture**.
 
 ---
+## Live links
 
+- **Live website:** https://oasisenergy.netlify.app/
+- **Backend API:** https://oasisenergy-api.onrender.com
+- **Frontend repository:** https://github.com/nasha861/oasis-energy-site
+- **Backend repository:** https://github.com/nasha861/oasis-Backend
 ## 🚀 Project Overview
+---
 
 OasisEnergy provides a digital platform where customers can:
 
@@ -255,14 +261,37 @@ This project was developed to gain practical experience in:
 
 **Aishat Raji**
 
-Junior Full-Stack Developer | MERN Stack Developer
+## Run locally
 
-GitHub: https://github.com/nasha861
+Clone the repository:
+
+```bash
+git clone https://github.com/nasha861/oasis-energy-site.git
+cd oasis-energy-site
+```
+
+Open the project's entry page in a browser or use the local development command specified by the repository if a build tool is configured. If the repository uses a package manager, install its dependencies according to its `package.json`.
 
 ---
 
-## 📌 Project Status
+## Related backend
 
-🚧 **Actively developed as a portfolio project.**
+The separately maintained OasisEnergy API handles backend functionality such as authentication, product management, installation and maintenance workflows, orders, and payment processing:
 
-The project demonstrates an end-to-end MERN application with authentication, product management, order processing, and Paystack payment integration.
+https://github.com/nasha861/oasis-Backend
+
+The deployed API is available at:
+
+https://oasisenergy-api.onrender.com
+
+## Deployment
+
+The live website is hosted on **Netlify**:
+
+https://oasisenergy.netlify.app/
+
+The backend is hosted separately on Render. For full-stack features to work in production, the frontend's API configuration must point to the deployed backend and the backend's CORS configuration must allow the production website origin.
+
+## Project status
+
+The website is published on Netlify. See the live site for the deployed experience and the repository source for the current implementation.
