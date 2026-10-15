@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-
 import api from "../../api/api";
-
 import "./Admin.css";
 
 function Users() {
@@ -23,6 +21,14 @@ function Users() {
       country: "Nigeria"
     }
   });
+    const [showAdminForm, setShowAdminForm] = useState(false);
+    const [adminForm, setAdminForm] = useState({
+      name: "",
+      email: "",
+      password: ""
+    });
+    const [adminMessage, setAdminMessage] = useState("");
+    const [creatingAdmin, setCreatingAdmin] = useState(false);
 
   // ==============================
   // FETCH CUSTOMERS
@@ -280,7 +286,42 @@ function Users() {
       }
     });
   };
+const handleCreateAdmin = async (event) => {
+  event.preventDefault();
+  setAdminMessage("");
 
+  if (
+    !adminForm.name.trim() ||
+    !adminForm.email.trim() ||
+    !adminForm.password
+  ) {
+    setAdminMessage("Please complete all fields.");
+    return;
+  }
+
+  try {
+    setCreatingAdmin(true);
+
+    const response = await api.post("/auth/create-admin", {
+      name: adminForm.name.trim(),
+      email: adminForm.email.trim().toLowerCase(),
+      password: adminForm.password
+    });
+
+    setAdminMessage(
+      response.data.message || "Admin account created successfully."
+    );
+
+    setAdminForm({ name: "", email: "", password: "" });
+  } catch (error) {
+    setAdminMessage(
+      error.response?.data?.message ||
+        "Failed to create admin account."
+    );
+  } finally {
+    setCreatingAdmin(false);
+  }
+};
   // ==============================
   // RENDER
   // ==============================
@@ -300,6 +341,64 @@ function Users() {
           accounts.
         </p>
       </div>
+        <div className="admin-form">
+          <h2>Administrator Accounts</h2>
+          <p>Create an additional administrator account.</p>
+
+          <button
+            type="button"
+            onClick={() => {
+              setShowAdminForm((previous) => !previous);
+              setAdminMessage("");
+            }}
+          >
+            {showAdminForm ? "Cancel" : "Create Admin Account"}
+          </button>
+
+          {showAdminForm && (
+            <form onSubmit={handleCreateAdmin}>
+              <label htmlFor="admin-name">Full Name</label>
+              <input
+                id="admin-name"
+                type="text"
+                value={adminForm.name}
+                onChange={(event) =>
+                  setAdminForm({ ...adminForm, name: event.target.value })
+                }
+                required
+              />
+
+              <label htmlFor="admin-email">Email</label>
+              <input
+                id="admin-email"
+                type="email"
+                value={adminForm.email}
+                onChange={(event) =>
+                  setAdminForm({ ...adminForm, email: event.target.value })
+                }
+                required
+              />
+
+              <label htmlFor="admin-password">Password</label>
+              <input
+                id="admin-password"
+                type="password"
+                value={adminForm.password}
+                onChange={(event) =>
+                  setAdminForm({ ...adminForm, password: event.target.value })
+                }
+                minLength={8}
+                required
+              />
+
+              <button type="submit" disabled={creatingAdmin}>
+                {creatingAdmin ? "Creating..." : "Create Administrator"}
+              </button>
+
+              {adminMessage && <p role="status">{adminMessage}</p>}
+            </form>
+          )}
+        </div>
 
       {/* ==============================
           LOADING

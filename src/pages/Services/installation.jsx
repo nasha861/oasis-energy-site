@@ -1,14 +1,15 @@
 import { useState } from "react";
 import "./installation.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import api from "../../api/api";
-
 function Installation() {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
-  systemPackage: "6aa86acbcdf922724b37e5d2",
-  address: "",
-  note: "",
-});
+    systemPackage: "6aa86acbcdf922724b37e5d2",
+    address: "",
+    note: "",
+  });
 
 const [loading, setLoading] = useState(false);
 const [message, setMessage] = useState("");
@@ -34,7 +35,9 @@ const handleSubmit = async (e) => {
     setMessage(
       "Your installation request has been submitted successfully."
     );
-
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 1500);
     setFormData({
       systemPackage: "6aa86acbcdf922724b37e5d2",
       address: "",

@@ -1,44 +1,46 @@
+
+import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
 
 function TechnicianDashboard() {
+  const navigate = useNavigate();
+
+  const cards = [
+    {
+      title: "My Installations",
+      description: "View assigned solar installation jobs and update progress.",
+      button: "Manage Installations",
+      path: "/technician/installations",
+    },
+    {
+      title: "My Maintenance Jobs",
+      description: "View assigned maintenance jobs and manage their status.",
+      button: "Manage Maintenance",
+      path: "/technician/maintenance",
+    },
+  ];
+
   return (
     <section className="dashboard">
       <div className="dashboard-header">
         <h1>Technician Dashboard</h1>
-
-        <p>
-          Welcome to the Oasis Energy technician dashboard.
-        </p>
+        <p>Welcome. Manage your assigned jobs from here.</p>
       </div>
 
       <div className="dashboard-cards">
-        <div className="dashboard-card">
-          <h3>My Installations</h3>
-          <p>
-            View installation jobs assigned to you.
-          </p>
-        </div>
+        {cards.map((card) => (
+          <article className="dashboard-card" key={card.title}>
+            <h2>{card.title}</h2>
+            <p>{card.description}</p>
 
-        <div className="dashboard-card">
-          <h3>My Maintenance Jobs</h3>
-          <p>
-            View maintenance jobs assigned to you.
-          </p>
-        </div>
-
-        <div className="dashboard-card">
-          <h3>Customers</h3>
-          <p>
-            View customer information related to your assigned jobs.
-          </p>
-        </div>
-
-        <div className="dashboard-card">
-          <h3>Job Status</h3>
-          <p>
-            Update the progress of your assigned jobs.
-          </p>
-        </div>
+            <button
+              type="button"
+              onClick={() => navigate(card.path)}
+            >
+              {card.button}
+            </button>
+          </article>
+        ))}
       </div>
     </section>
   );

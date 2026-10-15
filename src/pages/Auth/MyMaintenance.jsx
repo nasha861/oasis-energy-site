@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../../api/api";
 
 import "./MyMaintenance.css";
 
 function MyMaintenance() {
+  const navigate = useNavigate();
   const [maintenanceRequests, setMaintenanceRequests] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -52,6 +54,12 @@ if (loading) {
 if (error) {
   return <h1>{error}</h1>;
 }
+    <button
+      type="button"
+      onClick={() => navigate("/dashboard")}
+    >
+      ← Back to Dashboard
+    </button>
 return (
   <div className="my-maintenance-page">
     <h1>My Maintenance Requests</h1>

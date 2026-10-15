@@ -67,101 +67,57 @@ function Technicians() {
       [name]: value
     }));
   };
-
-  const handleAddTechnician = async () => {
-    if (
-      !newTechnician.name.trim() ||
-      !newTechnician.email.trim() ||
-      !newTechnician.password.trim()
-    ) {
-      alert("Name, email and password are required.");
-      return;
-    }
-
-    try {
-      const registerResponse = await api.post("/auth/register", {
-        name: newTechnician.name.trim(),
-        email: newTechnician.email.trim(),
-        password: newTechnician.password,
-        role: "technician",
-        phoneNumber: newTechnician.phoneNumber.trim()
-      });
-
-      console.log(
-        "Technician user created:",
-        registerResponse.data
-      );
-
-      // The auth registration creates the User and Technician profile.
-      // Now update the Technician record with the remaining details.
-      const createdUser = registerResponse.data.data;
-
-      const techniciansResponse = await api.get("/technicians");
-
-      const latestTechnicians =
-        techniciansResponse.data.data || [];
-
-      const createdTechnician = latestTechnicians.find(
-        (technician) =>
-          technician.user?._id === createdUser._id
-      );
-
-      if (createdTechnician) {
-        const updateResponse = await api.put(
-          `/technicians/${createdTechnician._id}`,
-          {
-            specialization: newTechnician.specialization,
-            status: newTechnician.status,
-            certifications: newTechnician.certifications
-              .split(",")
-              .map((item) => item.trim())
-              .filter(Boolean),
-            phone: newTechnician.phoneNumber.trim()
-          }
-        );
-
-        console.log(
-          "Technician profile updated:",
-          updateResponse.data
-        );
+    const handleAddTechnician = async () => {
+      if (
+        !newTechnician.name.trim() ||
+        !newTechnician.email.trim() ||
+        !newTechnician.password.trim()
+      ) {
+        setError("Name, email and password are required.");
+        return;
       }
 
-      // Refresh technician list
-      const refreshedResponse = await api.get(
-        "/technicians"
-      );
+      try {
+        setError("");
 
-      setTechnicians(
-        refreshedResponse.data.data || []
-      );
+        // Create the technician account and profile together.
+        await api.post("/auth/create-technician", {
+          name: newTechnician.name.trim(),
+          email: newTechnician.email.trim().toLowerCase(),
+          password: newTechnician.password,
+          phoneNumber: newTechnician.phoneNumber.trim(),
+          specialization: newTechnician.specialization,
+          certifications: newTechnician.certifications
+            .split(",")
+            .map((item) => item.trim())
+            .filter(Boolean)
+        });
 
-      setNewTechnician({
-        name: "",
-        email: "",
-        password: "",
-        phoneNumber: "",
-        specialization: "both",
-        certifications: "",
-        status: "available"
-      });
+        // Refresh the technician list.
+        const response = await api.get("/technicians");
+        setTechnicians(response.data.data || []);
 
-      setShowAddForm(false);
-      setError("");
+        setNewTechnician({
+          name: "",
+          email: "",
+          password: "",
+          phoneNumber: "",
+          specialization: "both",
+          certifications: "",
+          status: "available"
+        });
 
-      alert("Technician added successfully!");
-    } catch (error) {
-      console.error(
-        "Add technician error:",
-        error
-      );
+        setShowAddForm(false);
+        alert("Technician account created successfully!");
+      } catch (error) {
+        console.error("Add technician error:", error);
 
-      setError(
-        error.response?.data?.message ||
-          "Failed to add technician."
-      );
-    }
-  };
-
+        setError(
+          error.response?.data?.message ||
+            "Failed to create technician account."
+        );
+      }
+    };
   // =========================
   // EDIT TECHNICIAN
   // =========================

@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Home/Header";   
 import Footer from "./components/Home/Footer";   
+import ProtectedRoute from "./components/ProtectedRoute";
 
 import Login from "./pages/Auth/login.jsx";
 import Register from "./pages/Auth/register.jsx";
@@ -11,6 +12,8 @@ import Checkout from "./pages/Auth/checkout.jsx";
 import Orders from "./pages/Auth/orders";
 import PaymentVerify from "./pages/Auth/PaymentVerify";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import TechnicianInstallations from "./pages/Dashboard/TechnicianInstallations";
+import TechnicianMaintenance from "./pages/Dashboard/TechnicianMaintenance";
 import Users from "./pages/Admin/Users";
 import SolarProducts from "./pages/Admin/SolarProducts";
 import Quotes from "./pages/Admin/Quotes";
@@ -51,12 +54,16 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/admin/users" element={<Users />} />
-        <Route path="/admin/solar-products" element={<SolarProducts />} />
-        <Route path="/admin/quotes" element={<Quotes />} />
-        <Route path="/admin/technicians" element={<Technicians />} />
-        <Route path="/admin/services" element={<Services />} />
-        <Route path="/admin/service-requests" element={<ServiceRequests />} />
+        
+        <Route path="/technician/installations" element={ <ProtectedRoute allowedRoles={["technician"]}> <TechnicianInstallations /> </ProtectedRoute> } />
+        <Route path="/technician/maintenance" element={ <ProtectedRoute allowedRoles={["technician"]}> <TechnicianMaintenance /> </ProtectedRoute> } />
+        <Route path="/admin/users" element={ <ProtectedRoute allowedRoles={["admin"]}> <Users /> </ProtectedRoute> } />
+        <Route path="/admin/solar-products" element={ <ProtectedRoute allowedRoles={["admin"]}> <SolarProducts />  </ProtectedRoute>  } />
+        <Route path="/admin/quotes" element={ <ProtectedRoute allowedRoles={["admin"]}> <Quotes /> </ProtectedRoute> } />
+        <Route path="/admin/technicians" element={ <ProtectedRoute allowedRoles={["admin"]}> <Technicians /> </ProtectedRoute> } />
+        <Route path="/admin/services" element={ <ProtectedRoute allowedRoles={["admin"]}> <Services /> </ProtectedRoute>  } />
+        <Route path="/admin/service-requests" element={ <ProtectedRoute allowedRoles={["admin"]}><ServiceRequests /> </ProtectedRoute>} />
+
         <Route path="/quote" element={<Quote />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
