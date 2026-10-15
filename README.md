@@ -1,297 +1,249 @@
-# 🌞 OasisEnergy — Solar Energy Management Platform
+# OasisEnergy — Solar Energy Management Platform
 
-OasisEnergy is a full-stack solar energy management platform built with the **MERN stack**. The application provides customers with access to solar products, energy system packages, installation services, maintenance support, and online ordering and payment functionality.
+OasisEnergy is a full-stack solar energy management platform built with the MERN stack. It enables customers to explore solar products and system packages, request installation and maintenance services, place orders, and make online payments.
 
-The project demonstrates practical experience in **React.js frontend development, REST API development, MongoDB database management, JWT authentication, role-based access control, and full-stack application architecture**.
+The project demonstrates practical experience in React.js development, REST API integration, MongoDB, JWT authentication, role-based access control, payment gateway integration, and full-stack application architecture.
 
----
-## Live links
+## Live Links
 
-- **Live website:** https://oasisenergy.netlify.app/
+- **Live Website:** https://oasisenergy.netlify.app/
 - **Backend API:** https://oasisenergy-api.onrender.com
-- **Frontend repository:** https://github.com/nasha861/oasis-energy-site
-- **Backend repository:** https://github.com/nasha861/oasis-Backend
-## 🚀 Project Overview
----
+- **Frontend Repository:** https://github.com/nasha861/oasis-energy-site
+- **Backend Repository:** https://github.com/nasha861/oasis-Backend
 
-OasisEnergy provides a digital platform where customers can:
+## Project Overview
 
-* Explore solar energy products
-* View solar energy system packages
-* Learn about installation and maintenance services
-* Create an account and authenticate securely
-* Add solar products to a shopping cart
-* Place product orders
-* Select a payment method
-* Make payments through Paystack
-* Interact with backend REST APIs
+OasisEnergy connects customers with solar energy products and services through a web-based platform. The application includes customer-facing shopping and service workflows alongside dedicated administrator and technician dashboards.
 
-The frontend is built with **React.js and Vite** and communicates with a **Node.js/Express.js backend API** connected to **MongoDB**.
+### Key Features
 
----
+#### Authentication and Authorization
+- User registration and login
+- JWT-based authentication
+- Protected frontend routes
+- Role-based access for administrators, customers, and technicians
 
-## ✨ Key Features
+#### Solar Products and Packages
+- Browse solar products and their technical specifications
+- Explore solar panels, inverters, batteries, and racking products
+- Manage solar product listings through administrative functionality
+- Access solar energy system packages
 
-### 🔐 Authentication & Authorization
+#### Shopping and Orders
+- Add products to a shopping cart
+- Update product quantities and remove items
+- Enter customer and delivery information during checkout
+- Create and track customer orders
 
-* User registration and login
-* JWT-based authentication
-* Protected routes
-* Role-based access control
-* User roles including Admin, Customer, and Technician
+#### Payment Integration
+- Paystack payment initialization
+- Payment authorization and verification
+- Payment status handling through the backend
 
-### ☀️ Solar Products
+#### Installation and Maintenance
+- Installation and quotation workflows
+- Customer maintenance requests
+- Administrator management of service requests
+- Technician assignment and job progress tracking
 
-* Solar product listing
-* Product information and technical specifications
-* Product categories including:
+#### Role-Based Dashboards
+- **Administrator:** Manage users, technicians, products, quotations, and service requests.
+- **Customer:** Browse products, place orders, and manage personal service requests.
+- **Technician:** View assigned installation and maintenance jobs and update permitted job statuses.
 
-  * Solar Panels
-  * Inverters
-  * Batteries
-  * Racking
-
-### 🛒 Shopping & Orders
-
-* Product shopping interface
-* Add products to cart
-* Update product quantities
-* Remove products from cart
-* Checkout page
-* Customer delivery information
-* Order creation through REST APIs
-
-### 💳 Payment Integration
-
-* Paystack payment initialization
-* Payment authorization
-* Payment verification
-* Payment status handling
-
-### 🔧 Energy Services
-
-* Solar installation management
-* Maintenance management
-* Customer management
-* Technician management
-* Solar system packages
-
-### 📱 Frontend
-
-* Responsive React interface
-* React Router navigation
-* Axios API integration
-* Loading and error handling
-* Reusable components
-* Local shopping cart storage
-
----
-
-## 🛠️ Technologies Used
+## Technology Stack
 
 ### Frontend
-
-* React.js
-* JavaScript (ES6+)
-* HTML5
-* CSS3
-* React Router
-* Redux
-* Axios
-* Vite
+- React.js
+- JavaScript (ES6+)
+- HTML5 and CSS3
+- React Router
+- Axios
+- Vite
 
 ### Backend
-
-* Node.js
-* Express.js
-* RESTful APIs
-* MVC architecture
-* JWT Authentication
-* Express Middleware
-* Express Validator
+- Node.js
+- Express.js
+- RESTful APIs
+- MVC-oriented architecture
+- JWT authentication
+- Express middleware and request validation
 
 ### Database
+- MongoDB
+- Mongoose
 
-* MongoDB
-* Mongoose
-
-### Payment
-
-* Paystack
+### Payments
+- Paystack
 
 ### Development Tools
+- Git and GitHub
+- Visual Studio Code
+- Postman
+- npm
 
-* Git
-* GitHub
-* Visual Studio Code
-* Postman
-* npm
+## Application Architecture
 
----
-
-## 🏗️ Project Architecture
-
-The project is separated into frontend and backend applications.
+The application is divided into two independently maintained repositories.
 
 ```text
 OasisEnergy
-│
-├── oasis-react
-│   ├── components
-│   ├── pages
-│   ├── services / API
-│   ├── assets
-│   ├── routing
+├── Frontend: oasis-energy-site
+│   ├── React components
+│   ├── Pages
+│   ├── API integration
+│   ├── Routing
+│   ├── Assets
 │   └── Vite configuration
 │
-└── backend
-    └── src
-        ├── config
-        ├── controllers
-        ├── middleware
-        ├── models
-        ├── routes
-        └── services
+└── Backend: oasis-Backend
+    └── src/
+        ├── controllers/
+        ├── middleware/
+        ├── models/
+        ├── routes/
+        └── server.js
 ```
 
-The backend follows an **MVC-style architecture**, separating models, controllers, routes, middleware, and services.
+The frontend communicates with the backend through HTTP requests. The Express API handles business logic, authentication, authorization, database operations, and payment verification. MongoDB stores application data through Mongoose models.
 
----
-
-## 🔄 Application Flow
+### Application Flow
 
 ```text
 React Frontend
-       │
-       │ Axios / HTTP Requests
-       ▼
+      |
+      | HTTP Requests
+      v
 Express REST API
-       │
-       ├── Authentication & Authorization
-       │
-       ├── Controllers
-       │
-       ├── Services
-       │
-       ▼
-MongoDB / Mongoose
-       │
-       ▼
-   Application Data
+      |
+      ├── Authentication and Authorization
+      ├── Route Handlers and Controllers
+      ├── Business Logic
+      └── Database Operations
+                |
+                v
+         MongoDB / Mongoose
 ```
 
-For payments:
+### Payment Flow
 
 ```text
-React Checkout
-      │
-      ▼
-Create Order
-      │
-      ▼
-Express Payment API
-      │
-      ▼
-Paystack
-      │
-      ▼
-Payment Verification
-      │
-      ▼
-Update Payment Status
+Customer Checkout
+       |
+       v
+Backend Payment Initialization
+       |
+       v
+Paystack Payment
+       |
+       v
+Backend Payment Verification
+       |
+       v
+Order and Payment Status Update
 ```
 
----
+## Backend API
 
-## 🔑 Example API Areas
+The backend provides REST API functionality for the following areas:
 
-The backend provides REST API endpoints for areas such as:
+- Authentication and user profiles
+- Customers and technicians
+- Solar products and system packages
+- Orders and payments
+- Installations and maintenance
+- Quotations and service management
 
-* Authentication
-* Users
-* Solar products
-* Orders
-* Payments
-* Customers
-* Installations
-* Maintenance
-* Technicians
-* System packages
+API requests were tested during development using Postman. See the [backend repository](https://github.com/nasha861/oasis-Backend) for the server implementation.
 
-API requests were tested during development using **Postman**.
+## Getting Started
 
----
+### Prerequisites
 
-## 📸 Project Screenshots
+- Node.js and npm
+- Git
+- Access to the OasisEnergy backend, either locally or through the deployed API
 
-Screenshots can be added here to demonstrate the application interface.
-
-Example:
-
-```text
-Frontend Home Page
-Shop / Products
-Shopping Cart
-Checkout
-Login / Registration
-```
-
----
-
-## 🎯 Learning & Development Goals
-
-This project was developed to gain practical experience in:
-
-* Full-stack MERN development
-* Building RESTful APIs
-* Connecting React applications to backend APIs
-* MongoDB database design
-* Mongoose relationships
-* JWT authentication
-* Role-based authorization
-* API validation
-* Payment gateway integration
-* Postman API testing
-* Git and GitHub version control
-* Structuring applications using MVC principles
-
----
-
-## 👨‍💻 Developer
-
-**Aishat Raji**
-
-## Run locally
-
-Clone the repository:
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/nasha861/oasis-energy-site.git
 cd oasis-energy-site
 ```
 
-Open the project's entry page in a browser or use the local development command specified by the repository if a build tool is configured. If the repository uses a package manager, install its dependencies according to its `package.json`.
+### 2. Install dependencies
 
----
+```bash
+npm install
+```
 
-## Related backend
+### 3. Configure the API
 
-The separately maintained OasisEnergy API handles backend functionality such as authentication, product management, installation and maintenance workflows, orders, and payment processing:
+The deployed backend API is available at:
 
-https://github.com/nasha861/oasis-Backend
+```text
+https://oasisenergy-api.onrender.com/api
+```
 
-The deployed API is available at:
+Ensure the frontend API client in `src/api/api.js` points to the correct backend URL. If the project uses environment variables for API configuration, use the variable name defined by the existing application.
 
-https://oasisenergy-api.onrender.com
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed by Vite in your terminal.
+
+### 5. Build for production
+
+```bash
+npm run build
+```
 
 ## Deployment
 
-The live website is hosted on **Netlify**:
+The frontend is deployed on **Netlify**:
 
 https://oasisenergy.netlify.app/
 
-The backend is hosted separately on Render. For full-stack features to work in production, the frontend's API configuration must point to the deployed backend and the backend's CORS configuration must allow the production website origin.
+The backend is deployed separately on **Render**:
 
-## Project status
+https://oasisenergy-api.onrender.com
 
-The website is published on Netlify. See the live site for the deployed experience and the repository source for the current implementation.
+For production functionality, the frontend must use the deployed API URL, and the backend must allow requests from the production frontend origin through its CORS configuration.
+
+## Security
+
+- Protected pages use authentication and role-based route checks.
+- The backend enforces authorization for protected API operations.
+- Payment secret keys must remain on the backend and must never be exposed in frontend code.
+- Environment files and credentials should not be committed to version control.
+
+## Learning and Development
+
+This project provided practical experience in:
+
+- Full-stack MERN application development
+- React component design and routing
+- REST API integration
+- MongoDB data modeling with Mongoose
+- Authentication and role-based authorization
+- Request validation and error handling
+- Payment gateway integration
+- API testing with Postman
+- Git and GitHub version control
+- Deploying a frontend and backend separately
+
+## Developer
+
+**Aishat Raji**
+
+- GitHub: https://github.com/nasha861
+- Live Project: https://oasisenergy.netlify.app/
+
+## Related Repository
+
+The backend repository contains the API, database models, controllers, middleware, authentication, and payment processing:
+
+https://github.com/nasha861/oasis-Backend
